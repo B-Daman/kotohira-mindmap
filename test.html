@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <h1>テストページ</h1>
+    <div id="test-output"></div>
+    
+    <script>
+        console.log('Test page loaded');
+        document.getElementById('test-output').textContent = 'JavaScriptが正常に動作しています';
+    </script>
+    
+    <script type="module">
+        import { DataManager } from './js/data.js';
+        console.log('Module import test successful');
+        document.getElementById('test-output').textContent += ' - モジュールのインポートも成功';
+    </script>
+</body>
+</html>

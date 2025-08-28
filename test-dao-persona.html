@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAOペルソナ設計 - デバッグテスト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>DAOペルソナ設計マインドマップ - デバッグテスト</h1>
+    
+    <div id="status"></div>
+    
+    <h2>現在のURL情報</h2>
+    <pre id="urlInfo"></pre>
+    
+    <h2>テストボタン</h2>
+    <button onclick="testDataLoad()">1. データファイル読み込みテスト</button>
+    <button onclick="testConfigLoad()">2. 設定ファイル確認</button>
+    <button onclick="goToMindmap()">3. マインドマップを開く（URLパラメータ付き）</button>
+    <button onclick="goToMindmapDirect()">4. dao-persona.htmlを開く</button>
+    
+    <h2>データ内容</h2>
+    <pre id="dataContent"></pre>
+    
+    <h2>設定内容</h2>
+    <pre id="configContent"></pre>
+
+    <script type="module">
+        // URLパラメータ情報表示
+        const urlInfo = {
+            href: window.location.href,
+            search: window.location.search,
+            params: Object.fromEntries(new URLSearchParams(window.location.search))
+        };
+        document.getElementById('urlInfo').textContent = JSON.stringify(urlInfo, null, 2);
+        
+        // データ読み込みテスト
+        window.testDataLoad = async function() {
+            const statusDiv = document.getElementById('status');
+            const dataDiv = document.getElementById('dataContent');
+            
+            try {
+                statusDiv.className = 'status info';
+                statusDiv.textContent = 'データファイルを読み込み中...';
+                
+                const response = await fetch('data/dao-persona-design.json');
+                if (!response.ok) {
+                    throw new Error(`HTTPエラー: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                statusDiv.className = 'status success';
+                statusDiv.textContent = '✅ データファイルの読み込みに成功しました！';
+                
+                // データの最初の部分を表示
+                const preview = {
+                    name: data.name,
+                    childrenCount: data.children ? data.children.length : 0,
+                    firstChild: data.children ? data.children[0] : null
+                };
+                dataDiv.textContent = JSON.stringify(preview, null, 2);
+                
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.textContent = `❌ エラー: ${error.message}`;
+                dataDiv.textContent = error.stack;
+            }
+        };
+        
+        // 設定ファイル確認
+        window.testConfigLoad = async function() {
+            const statusDiv = document.getElementById('status');
+            const configDiv = document.getElementById('configContent');
+            
+            try {
+                // config.jsをインポート
+                const { MINDMAP_CONFIGS, getActiveConfig } = await import('./js/config.js');
+                
+                const configs = Object.keys(MINDMAP_CONFIGS).map(key => ({
+                    key: key,
+                    title: MINDMAP_CONFIGS[key].title,
+                    dataUrl: MINDMAP_CONFIGS[key].dataUrl
+                }));
+                
+                // dao-personaが存在するか確認
+                const daoPersonaExists = 'dao-persona' in MINDMAP_CONFIGS;
+                
+                statusDiv.className = daoPersonaExists ? 'status success' : 'status error';
+                statusDiv.textContent = daoPersonaExists 
+                    ? '✅ dao-persona設定が存在します！' 
+                    : '❌ dao-persona設定が見つかりません！';
+                
+                configDiv.textContent = JSON.stringify({
+                    availableConfigs: configs,
+                    daoPersonaExists: daoPersonaExists,
+                    daoPersonaConfig: MINDMAP_CONFIGS['dao-persona'] || null
+                }, null, 2);
+                
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.textContent = `❌ 設定ファイルエラー: ${error.message}`;
+                configDiv.textContent = error.stack;
+            }
+        };
+        
+        // マインドマップを開く
+        window.goToMindmap = function() {
+            window.location.href = 'index.html?map=dao-persona';
+        };
+        
+        window.goToMindmapDirect = function() {
+            window.location.href = 'dao-persona.html';
+        };
+        
+        // ページ読み込み時に自動テスト
+        window.addEventListener('load', () => {
+            testDataLoad();
+            setTimeout(() => testConfigLoad(), 500);
+        });
+    </script>
+</body>
+</html>

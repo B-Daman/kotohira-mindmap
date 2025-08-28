@@ -1,0 +1,510 @@
+{
+  "centerNode": {
+    "id": "root",
+    "title": "将来設計",
+    "type": "root",
+    "description": "プライベートと仕事の両立を考えた人生設計"
+  },
+  "nodes": [
+    {
+      "id": "private_life",
+      "title": "生活環境",
+      "type": "major_issue",
+      "description": "家族計画と生活環境の整備",
+      "status": "critical",
+      "children": [
+        {
+          "id": "marriage_family",
+          "title": "結婚・家族計画",
+          "type": "issue",
+          "description": "早急に結婚して子どもが欲しい（現在35歳）",
+          "status": "critical",
+          "children": [
+            {
+              "id": "living_arrangement",
+              "title": "住環境の準備",
+              "type": "solution",
+              "description": "琴平町内の2LDKで家族3人暮らし可能",
+              "children": [
+                {
+                  "id": "current_housing",
+                  "title": "現在の住居活用",
+                  "type": "current_effort",
+                  "description": "2LDKの部屋で家族3人生活の準備",
+                  "status": "active",
+                  "assignee": "自分",
+                  "parentId": "living_arrangement",
+                  "children": []
+                }
+              ],
+              "parentId": "marriage_family"
+            },
+            {
+              "id": "partner_search",
+              "title": "結婚相手探し",
+              "type": "solution",
+              "description": "半年〜1年以内に本格化",
+              "children": [
+                {
+                  "id": "marriage_timeline",
+                  "title": "結婚・出産計画",
+                  "type": "future_effort",
+                  "description": "おじいちゃんおばあちゃんに孫を見せたい",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "partner_search",
+                  "children": []
+                }
+              ],
+              "parentId": "marriage_family"
+            }
+          ],
+          "parentId": "private_life"
+        },
+        {
+          "id": "remote_work",
+          "title": "リモートワーク環境",
+          "type": "issue",
+          "description": "自由度の高いワークスタイルの確立",
+          "children": [
+            {
+              "id": "work_flexibility",
+              "title": "働き方の自由度向上",
+              "type": "solution",
+              "description": "場所にとらわれない働き方",
+              "children": [
+                {
+                  "id": "current_remote",
+                  "title": "現在のリモート環境維持",
+                  "type": "current_effort",
+                  "description": "リモート中心の働き方を継続",
+                  "status": "active",
+                  "assignee": "自分",
+                  "parentId": "work_flexibility",
+                  "children": []
+                }
+              ],
+              "parentId": "remote_work"
+            }
+          ],
+          "parentId": "private_life"
+        },
+        {
+          "id": "car_upgrade",
+          "title": "車中泊用の車への買い替え",
+          "type": "issue",
+          "description": "現在の車にクーラーがなく車中泊が困難",
+          "children": [
+            {
+              "id": "camping_car",
+              "title": "キャンピングカー購入計画",
+              "type": "solution",
+              "description": "3年後に資金が貯まったら購入",
+              "children": [
+                {
+                  "id": "car_savings",
+                  "title": "車購入資金の貯蓄",
+                  "type": "future_effort",
+                  "description": "普段使いもできて車中泊仕様に切り替え可能な車",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "camping_car",
+                  "children": []
+                }
+              ],
+              "parentId": "car_upgrade"
+            }
+          ],
+          "parentId": "private_life"
+        }
+      ],
+      "parentId": "root"
+    },
+    {
+      "id": "health_goals",
+      "title": "健康とダイエットの目標",
+      "type": "major_issue",
+      "description": "健康維持と理想体重の達成",
+      "status": "active",
+      "children": [
+        {
+          "id": "weight_loss",
+          "title": "減量目標",
+          "type": "issue",
+          "description": "現在68kg→目標60kg",
+          "status": "active",
+          "children": [
+            {
+              "id": "exercise_habit",
+              "title": "運動習慣の確立",
+              "type": "solution",
+              "description": "健康寿命のためにも必要",
+              "children": [
+                {
+                  "id": "start_exercise",
+                  "title": "本格的な運動開始",
+                  "type": "future_effort",
+                  "description": "プライベートタイムを確保して運動",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "exercise_habit",
+                  "children": []
+                }
+              ],
+              "parentId": "weight_loss"
+            }
+          ],
+          "parentId": "health_goals"
+        },
+        {
+          "id": "liver_health",
+          "title": "肝臓の健康維持",
+          "type": "issue",
+          "description": "健康上の理由から改善が必要",
+          "children": [
+            {
+              "id": "health_improvement",
+              "title": "生活習慣の改善",
+              "type": "solution",
+              "description": "運動と食事の見直し",
+              "children": [],
+              "parentId": "liver_health"
+            }
+          ],
+          "parentId": "health_goals"
+        }
+      ],
+      "parentId": "root"
+    },
+    {
+      "id": "economic_goals",
+      "title": "経済的な目標と今後の働き方",
+      "type": "major_issue",
+      "description": "年収1000万円を目指した収入向上計画",
+      "status": "active",
+      "children": [
+        {
+          "id": "current_income",
+          "title": "現在の収入状況",
+          "type": "issue",
+          "description": "月収34万円（手取り26万円）、年収約400万円",
+          "children": [
+            {
+              "id": "income_increase",
+              "title": "収入向上策",
+              "type": "solution",
+              "description": "複数の収入源確保",
+              "children": [
+                {
+                  "id": "dao_manager",
+                  "title": "DAOマネージャー業務",
+                  "type": "current_effort",
+                  "description": "基本給与の確保",
+                  "status": "active",
+                  "assignee": "自分",
+                  "parentId": "income_increase",
+                  "children": []
+                }
+              ],
+              "parentId": "current_income"
+            }
+          ],
+          "parentId": "economic_goals"
+        },
+        {
+          "id": "ai_consultant",
+          "title": "AI相談員としての副業",
+          "type": "issue",
+          "description": "1社あたり月10万円のAI導入支援",
+          "status": "active",
+          "children": [
+            {
+              "id": "client_expansion",
+              "title": "顧客拡大計画",
+              "type": "solution",
+              "description": "3年間で5〜10社契約",
+              "children": [
+                {
+                  "id": "five_companies",
+                  "title": "5社契約で月収50万円",
+                  "type": "future_effort",
+                  "description": "まずは5社を目標に",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "client_expansion",
+                  "children": []
+                },
+                {
+                  "id": "ten_companies",
+                  "title": "10社契約で月収100万円",
+                  "type": "future_effort",
+                  "description": "最終目標は10社契約",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "client_expansion",
+                  "children": []
+                }
+              ],
+              "parentId": "ai_consultant"
+            }
+          ],
+          "parentId": "economic_goals"
+        },
+        {
+          "id": "investment",
+          "title": "投資・資産運用",
+          "type": "issue",
+          "description": "お金にも働いてもらう仕組み作り",
+          "children": [
+            {
+              "id": "investment_portfolio",
+              "title": "投資ポートフォリオ構築",
+              "type": "solution",
+              "description": "株式、仮想通貨、NFTへの投資",
+              "children": [
+                {
+                  "id": "passive_income",
+                  "title": "配当・優待収入の確立",
+                  "type": "future_effort",
+                  "description": "フロー所得を増やす",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "investment_portfolio",
+                  "children": []
+                }
+              ],
+              "parentId": "investment"
+            }
+          ],
+          "parentId": "economic_goals"
+        },
+        {
+          "title": "エキスパート・バンク登録",
+          "type": "issue",
+          "description": "AIの専門家として小規模事業者を支援？",
+          "children": [
+            {
+              "title": "商工会に相談",
+              "type": "solution",
+              "description": "",
+              "children": [
+                {
+                  "title": "新たな収入源の確保",
+                  "type": "future_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1754516897314_epe2v5zd2",
+                  "parentId": "node_1754516854163_35wwl0583",
+                  "status": "planned",
+                  "assignee": "自分"
+                }
+              ],
+              "id": "node_1754516854163_35wwl0583",
+              "parentId": "node_1754516807913_asrbofxjv",
+              "status": "planned"
+            }
+          ],
+          "id": "node_1754516807913_asrbofxjv",
+          "parentId": "economic_goals",
+          "urls": [
+            {
+              "label": "専門家派遣事業",
+              "url": "https://www.shokokai-kagawa.or.jp/expert/",
+              "description": "経営・技術強化支援事業（エキスパート・バンク）について"
+            }
+          ]
+        }
+      ],
+      "parentId": "root"
+    },
+    {
+      "id": "career_after",
+      "title": "協力隊卒業後のプラン",
+      "type": "major_issue",
+      "description": "任期終了後の働き方検討",
+      "status": "planned",
+      "children": [
+        {
+          "id": "other_region",
+          "title": "他地域の地域おこし協力隊",
+          "type": "issue",
+          "description": "転籍も視野に入れる",
+          "children": [
+            {
+              "id": "region_transfer",
+              "title": "他地域への転籍検討",
+              "type": "solution",
+              "description": "経験を活かした新たな挑戦",
+              "children": [],
+              "parentId": "other_region"
+            }
+          ],
+          "parentId": "career_after"
+        },
+        {
+          "id": "product_manager",
+          "title": "地域プロジェクトマネージャー",
+          "type": "issue",
+          "description": "年収650万円程度？の高待遇。\n基本的にはフルタイムの会計年度任用職員だが、兼業・副業可能。\nパートタイムも可能。",
+          "children": [
+            {
+              "id": "advisor_role",
+              "title": "アドバイザー・繋ぎ役",
+              "type": "solution",
+              "description": "地域協力隊員の支援",
+              "children": [
+                {
+                  "id": "pm_preparation",
+                  "title": "PMポジションの準備",
+                  "type": "future_effort",
+                  "description": "2年以内に進路決定",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "advisor_role",
+                  "children": []
+                }
+              ],
+              "parentId": "product_manager"
+            }
+          ],
+          "parentId": "career_after",
+          "urls": [
+            {
+              "label": "総務省-地域プロジェクトマネージャー",
+              "url": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/02gyosei08_04000210.html"
+            }
+          ]
+        },
+        {
+          "id": "town_council",
+          "title": "琴平町の町議会議員",
+          "type": "issue",
+          "description": "月約20万円と低いため副業必須",
+          "children": [
+            {
+              "id": "council_consideration",
+              "title": "議員活動の検討",
+              "type": "solution",
+              "description": "町への恩返しと副業の両立",
+              "children": [],
+              "parentId": "town_council"
+            }
+          ],
+          "parentId": "career_after"
+        }
+      ],
+      "parentId": "root"
+    },
+    {
+      "id": "community_future",
+      "title": "Discord・LINEコミュニティ運営の今後",
+      "type": "major_issue",
+      "description": "卒業後の運営継続判断",
+      "status": "active",
+      "children": [
+        {
+          "id": "operation_continuation",
+          "title": "運営継続の条件",
+          "type": "issue",
+          "description": "報酬や役割次第で判断",
+          "children": [
+            {
+              "id": "paid_operation",
+              "title": "業務委託での継続",
+              "type": "solution",
+              "description": "コミュニティマネージャーとして報酬あり",
+              "children": [
+                {
+                  "id": "negotiate_contract",
+                  "title": "役場との契約交渉",
+                  "type": "future_effort",
+                  "description": "報酬をもらえるなら続けたい",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "paid_operation",
+                  "children": []
+                }
+              ],
+              "parentId": "operation_continuation"
+            },
+            {
+              "title": "他の隊員に引継ぎ？",
+              "type": "solution",
+              "description": "",
+              "children": [
+                {
+                  "title": "後任のDAOマネに依頼するか、普通の隊員にお願いするか、他の方にお願いするか",
+                  "type": "future_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1754517441779_bvj9zzmmj",
+                  "parentId": "node_1754517402229_gtd22zyip"
+                }
+              ],
+              "id": "node_1754517402229_gtd22zyip",
+              "parentId": "operation_continuation"
+            }
+          ],
+          "parentId": "community_future"
+        },
+        {
+          "id": "automation",
+          "title": "運営の自動化",
+          "type": "issue",
+          "description": "BOTによる負担軽減",
+          "children": [
+            {
+              "id": "bot_development",
+              "title": "自動配信システム構築",
+              "type": "solution",
+              "description": "イベントや天気情報の自動配信",
+              "children": [
+                {
+                  "id": "prototype_bot",
+                  "title": "プロトタイプ構築",
+                  "type": "future_effort",
+                  "description": "2025年内に実装",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "bot_development",
+                  "children": []
+                }
+              ],
+              "parentId": "automation"
+            }
+          ],
+          "parentId": "community_future"
+        },
+        {
+          "title": "運営負担の軽減",
+          "type": "issue",
+          "description": "四六時中コミュニティを見続けるのは困難",
+          "children": [
+            {
+              "title": "サポート体制の構築",
+              "type": "solution",
+              "description": "周りにサポートしてもらえる環境作り",
+              "children": [
+                {
+                  "title": "メンバーへの協力要請",
+                  "type": "future_effort",
+                  "description": "子どもができた際の配慮をお願い",
+                  "children": [],
+                  "id": "node_1754516447405_0uktprxxk",
+                  "parentId": "node_1754516436505_bnpvlqj7z",
+                  "status": "planned",
+                  "assignee": "自分"
+                }
+              ],
+              "id": "node_1754516436505_bnpvlqj7z",
+              "parentId": "node_1754516424264_9fup9tr3f"
+            }
+          ],
+          "id": "node_1754516424264_9fup9tr3f",
+          "parentId": "community_future"
+        }
+      ],
+      "parentId": "root"
+    }
+  ]
+}

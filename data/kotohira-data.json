@@ -1,0 +1,519 @@
+{
+  "centerNode": {
+    "id": "root",
+    "title": "琴平町 消滅可能性自治体からの脱却",
+    "type": "root",
+    "description": "香川県琴平町の地域活性化に向けた総合的な取り組み"
+  },
+  "nodes": [
+    {
+      "id": "population_decline",
+      "title": "人口減少問題",
+      "type": "major_issue",
+      "description": "20-39歳女性50%減少等の深刻な人口問題",
+      "status": "critical",
+      "children": [
+        {
+          "id": "female_population",
+          "title": "20-39歳女性人口50%減少",
+          "type": "issue",
+          "description": "消滅可能性自治体の最重要指標",
+          "urls": [
+            {
+              "label": "第3期 琴平町まち・ひと・しごと創生総合戦略",
+              "url": "https://www.town.kotohira.kagawa.jp/uploaded/life/10545_22247_misc.pdf",
+              "description": "人口推計データ"
+            },
+            {
+              "label": "朝日新聞「消滅可能性自治体」マップ",
+              "url": "https://www.asahi.com/special/population2024/list/",
+              "description": "全国データとの比較"
+            }
+          ],
+          "data": {
+            "currentStatus": "消滅可能性自治体指定",
+            "evidence": "現況調査 第3期 琴平町 まち・ひと・しごと創生総合戦略（令和7年3月）"
+          },
+          "children": [
+            {
+              "id": "relation_population",
+              "title": "関係人口創出",
+              "type": "solution",
+              "description": "地理的・時間的制約を超えた関わり方の提供",
+              "children": [
+                {
+                  "id": "kotohira_connect",
+                  "title": "『コトヒラコネクト』プロジェクト（略称：『コトコト』）",
+                  "type": "current_effort",
+                  "description": "流通科学大学との連携による学生誘致プログラム",
+                  "status": "active",
+                  "children": [
+                    {
+                      "id": "kerry_case",
+                      "title": "ケリーさん（張 心慈）成功事例",
+                      "type": "success",
+                      "description": "学生時代体験→社会人勤務→地域おこし協力隊への流れ",
+                      "urls": [
+                        {
+                          "label": "Facebook記事",
+                          "url": "https://www.facebook.com/kotohira.chiikiokoshi/posts/1007284608264868/"
+                        }
+                      ],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "otetsutabi",
+                  "title": "おてつたび連携",
+                  "type": "current_effort",
+                  "description": "短期滞在型の関係人口創出プログラム",
+                  "status": "active",
+                  "children": []
+                },
+                {
+                  "id": "cooperation_team",
+                  "title": "地域おこし協力隊制度活用",
+                  "type": "current_effort",
+                  "description": "外部人材の受け入れと活用",
+                  "status": "active",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "dual_residence",
+              "title": "二拠点居住促進",
+              "type": "solution",
+              "description": "都市部との二拠点生活の支援",
+              "children": [
+                {
+                  "id": "satellite_office",
+                  "title": "サテライトオフィス誘致",
+                  "type": "future_effort",
+                  "description": "都市部企業のサテライトオフィス開設支援",
+                  "children": []
+                },
+                {
+                  "id": "trial_living",
+                  "title": "お試し居住プログラム",
+                  "type": "future_effort",
+                  "description": "短期間の移住体験プログラム開発",
+                  "children": []
+                },
+                {
+                  "title": "ノマドワーカーの勧誘",
+                  "type": "current_effort",
+                  "description": "琴平バスが実施中",
+                  "children": [],
+                  "id": "node_1754484143947_x12fh23fp"
+                }
+              ]
+            },
+            {
+              "id": "ui_turn_support",
+              "title": "UIターン支援強化",
+              "type": "solution",
+              "description": "移住・定住に向けた総合的支援",
+              "children": [
+                {
+                  "id": "ai_online_income",
+                  "title": "AIを活用したオンライン収入支援",
+                  "type": "current_effort",
+                  "description": "デジタルスキルによる収入機会創出",
+                  "status": "active",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "title": "地元就職機会創出",
+              "type": "solution",
+              "description": "魅力的な働く場所の提供（リアルな場所）",
+              "children": [],
+              "id": "node_1754484071387_65l0w3hiv"
+            }
+          ],
+          "image": {
+            "url": "https://via.placeholder.com/600x400/3498db/ffffff?text=人口推移グラフ",
+            "alt": "琴平町の20-39歳女性人口推移グラフ（サンプル）",
+            "caption": "※これはサンプル画像です。実際のデータに置き換えてください。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tourism_issue",
+      "title": "観光リピーター不足",
+      "type": "major_issue",
+      "description": "一度きりの観光地からの脱却が課題",
+      "status": "critical",
+      "children": [
+        {
+          "id": "konpira_once",
+          "title": "「一生に一度はこんぴらさん」問題",
+          "type": "issue",
+          "description": "金刀比羅宮参拝が一度きりになる傾向",
+          "data": {
+            "annualVisitors": "年間200-300万人",
+            "problem": "リピーター率の低さ",
+            "pattern": "一回満足で終了"
+          },
+          "children": [
+            {
+              "id": "beyond_konpira",
+              "title": "こんぴらさん以外の魅力発信",
+              "type": "solution",
+              "description": "多様な観光資源の活用",
+              "children": [
+                {
+                  "id": "art_festival",
+                  "title": "アートフェスティバル開催",
+                  "type": "current_effort",
+                  "description": "現代アートと伝統文化の融合イベント",
+                  "children": [],
+                  "status": "completed"
+                }
+              ]
+            },
+            {
+              "id": "experience_value",
+              "title": "体験価値の向上",
+              "type": "solution",
+              "description": "参加型・体験型コンテンツの充実",
+              "children": [
+                {
+                  "title": "NFTなどによる、体験価値の向上",
+                  "type": "future_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1754488324183_66n5fzz5i"
+                }
+              ]
+            },
+            {
+              "id": "story_route",
+              "title": "ストーリー性のある観光ルート開発",
+              "type": "solution",
+              "description": "歴史と文化を感じる周遊コース",
+              "children": [
+                {
+                  "title": "話題性を活用した集客",
+                  "type": "future_effort",
+                  "description": "メディア露出による認知度向上",
+                  "children": [],
+                  "id": "node_1754488491506_ketpjw1xl"
+                },
+                {
+                  "title": "五街道やその他の建物や歴史のアピール",
+                  "type": "future_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1754488543506_51ofepg4b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "accommodation_shortage",
+          "title": "宿泊促進不足",
+          "type": "issue",
+          "description": "日帰り観光が多く、経済効果が限定的",
+          "data": {
+            "mainCause": "交通の便の良さが裏目（日帰り観光）",
+            "secondaryCause": "夜間観光スポットの不足"
+          },
+          "children": [
+            {
+              "id": "diverse_accommodation",
+              "title": "多様な宿泊施設の魅力発信",
+              "type": "solution",
+              "description": "歴史ある旅館から新しいスタイルまで",
+              "children": []
+            },
+            {
+              "id": "night_events",
+              "title": "夜間イベントの開催",
+              "type": "solution",
+              "description": "夜の観光コンテンツ開発",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "tourism_demand_wave",
+          "title": "観光需要の波",
+          "type": "issue",
+          "description": "繁忙期と閑散期の差が激しい",
+          "data": {
+            "peakSeason": "初詣・GW・例大祭・歌舞伎時期",
+            "offSeason": "夏季・冬季の平日",
+            "problem": "人件費制約による人員調整困難"
+          },
+          "children": [
+            {
+              "id": "student_programs",
+              "title": "学生招致プログラム",
+              "type": "solution",
+              "description": "若者向け体験型プログラムの開発",
+              "children": []
+            },
+            {
+              "id": "demand_leveling",
+              "title": "繁忙期と閑散期の平準化",
+              "type": "solution",
+              "description": "需要分散による安定運営",
+              "children": [
+                {
+                  "title": "閑散期イベントの創出",
+                  "type": "current_effort",
+                  "description": "年間を通じた集客イベント企画",
+                  "children": [],
+                  "id": "node_1754484321194_pogw7so3j",
+                  "status": "active"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "information_dissemination",
+      "title": "情報発信力不足",
+      "type": "major_issue",
+      "description": "効果的な情報発信ができていない",
+      "children": [
+        {
+          "id": "event_info_spread",
+          "title": "イベント情報の拡散不足",
+          "type": "issue",
+          "description": "開催情報が住民や観光客に届いていない",
+          "data": {
+            "problem1": "町内イベント情報が統合されていない",
+            "problem2": "デジタル町民アプリの利用者限定",
+            "problem3": "SNSフォロワー数の少なさ",
+            "feedback": "「後からイベントを知った」という声の多発"
+          },
+          "children": [
+            {
+              "id": "multichannel_pr",
+              "title": "情報発信チャネルの多様化",
+              "type": "solution",
+              "description": "様々な媒体での同時発信",
+              "children": [
+                {
+                  "title": "Discord「琴平DAO」の創設",
+                  "type": "future_effort",
+                  "description": "Instagram、Facebook、LINE、Xの他に、さらにプラットフォームを追加。\nこんぴーくんbotの導入。",
+                  "children": [],
+                  "id": "node_1754486571179_cz1fa9lxo",
+                  "status": "planned"
+                },
+                {
+                  "title": "琴平DAOのLINEオープンチャット作成",
+                  "type": "future_effort",
+                  "description": "現在のLINEオープンチャット「#好きがコトひらく町」は、モデレテーターがおらず、コミュニティが整っていない。そのため、新たなLINEのオープンチャットを作成する。",
+                  "children": [],
+                  "id": "node_1754486734752_7le8lowmy"
+                }
+              ]
+            },
+            {
+              "id": "moderator_system",
+              "title": "地域イベントなどでの宣伝",
+              "type": "solution",
+              "description": "持続可能な運営体制構築",
+              "children": [
+                {
+                  "title": "AIセミナーやスマホサロン終了時に、イベント情報を共有・宣伝する",
+                  "type": "future_effort",
+                  "description": "情報の地域格差を埋めつつ、コミュニティの力でイベントの宣伝を行う",
+                  "children": [],
+                  "id": "node_1754486866954_qhljo3eqg"
+                }
+              ]
+            },
+            {
+              "title": "総合センター活用",
+              "type": "solution",
+              "description": "こんぴらさん周辺以外の方にも、情報が届きやすくなるような工夫を。",
+              "children": [
+                {
+                  "title": "AIセミナーの実施",
+                  "type": "future_effort",
+                  "description": "コトリだけではなく、総合センターでもAIセミナーを実施することで、榎井・象郷地区の方も参加しやすいイベントに。また、セミナーの最後に今後のイベント情報を共有する。",
+                  "assignee": "自分",
+                  "status": "active",
+                  "children": [],
+                  "id": "node_1754488001765_bz8urlwc7"
+                }
+              ],
+              "id": "node_1754487914438_583m33beb"
+            },
+            {
+              "title": "AIを使った情報発信の簡略化",
+              "type": "solution",
+              "description": "0から文章を作ったりするのではなく、AIに文章を考えてもらう。AIにリマインドしてもらう。自動投稿してもらう。",
+              "children": [],
+              "id": "node_1754488172520_hquamglcz"
+            }
+          ]
+        },
+        {
+          "id": "line_openchat",
+          "title": "LINEオープンチャット運営課題",
+          "type": "issue",
+          "description": "一方的な情報提供で双方向性に欠ける",
+          "data": {
+            "currentMembers": "約500名",
+            "activeRate": "低い",
+            "problem1": "モデレーター不在",
+            "problem2": "宣伝投稿のみのコミュニティ化",
+            "problem3": "活発な議論の不足"
+          },
+          "children": [
+            {
+              "id": "dao_openchat",
+              "title": "琴平DAO専用オープンチャット作成",
+              "type": "solution",
+              "description": "目的を明確にしたコミュニティ運営",
+              "children": [
+                {
+                  "title": "オープンチャットの設計",
+                  "type": "current_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1754487243263_zpcc681f2"
+                }
+              ]
+            },
+            {
+              "id": "moderator_setup",
+              "title": "モデレーター体制の整備",
+              "type": "solution",
+              "description": "継続的な運営管理体制",
+              "children": []
+            },
+            {
+              "id": "community_guidelines",
+              "title": "コミュニティガイドラインの策定",
+              "type": "solution",
+              "description": "健全なコミュニケーション環境整備",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "tourism_digital",
+          "title": "観光案内のデジタル化",
+          "type": "issue",
+          "description": "紙媒体中心で若年層にリーチできない",
+          "data": {
+            "problem1": "観光客の個別質問への対応不足",
+            "problem2": "地元住民の知識活用不足",
+            "problem3": "リアルタイム情報提供の限界"
+          },
+          "children": [
+            {
+              "id": "discord_tourist_guide",
+              "title": "Discord活用観光案内",
+              "type": "solution",
+              "description": "リアルタイムでの質問対応システム",
+              "children": []
+            },
+            {
+              "id": "bot_automation",
+              "title": "ボット活用自動応答",
+              "type": "solution",
+              "description": "よくある質問への自動対応",
+              "children": [
+                {
+                  "title": "池商店の池さんbot、QRコードでの現地bot導入",
+                  "type": "future_effort",
+                  "description": "botはDiscordのbotと同じような設計だと、チャットbotとしてのクオリティが担保できると思われる。",
+                  "children": [],
+                  "id": "node_1754487218526_i2w78m8fx"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional_disparity",
+      "title": "地域格差",
+      "type": "major_issue",
+      "description": "中心部と周辺部の格差が拡大",
+      "children": [
+        {
+          "title": "こんぴらさん以外の場所の収入",
+          "type": "issue",
+          "description": "こんぴらさん周辺はビジネスチャンスに恵まれているが、その他の地域とは格差がある",
+          "children": [
+            {
+              "title": "効果的な宣伝戦略",
+              "type": "solution",
+              "description": "例えば、こんぴら十帖に参加するなど",
+              "children": [
+                {
+                  "title": "琴平町全体での宣伝",
+                  "type": "future_effort",
+                  "description": "InstagramのリールやXのリポストなどでイベント情報を拡散",
+                  "children": [],
+                  "id": "node_1754488700044_r9owgv2c9"
+                }
+              ],
+              "id": "node_1754488658891_dj3h61cg7"
+            }
+          ],
+          "id": "node_1754488441308_jisg296qe"
+        }
+      ]
+    },
+    {
+      "id": "digital_innovation",
+      "title": "人手不足",
+      "type": "major_issue",
+      "description": "最新技術を活用した地域課題解決",
+      "children": [
+        {
+          "id": "ai_efficiency",
+          "title": "AI活用・業務効率化",
+          "type": "issue",
+          "description": "行政サービスの効率化と質の向上",
+          "data": {
+            "demand1": "町民・事業者のデジタルスキル向上",
+            "demand2": "業務効率化による生産性向上",
+            "demand3": "売上分析・顧客数推移の可視化"
+          },
+          "children": [
+            {
+              "id": "regular_ai_seminars",
+              "title": "定期的AIセミナー開催",
+              "type": "solution",
+              "description": "継続的なスキルアップ支援",
+              "children": []
+            },
+            {
+              "id": "business_app_support",
+              "title": "事業者向けアプリ活用支援",
+              "type": "solution",
+              "description": "実務に直結するツール導入",
+              "children": []
+            },
+            {
+              "id": "analysis_tool_support",
+              "title": "分析ツール導入支援",
+              "type": "solution",
+              "description": "データドリブンな経営支援",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

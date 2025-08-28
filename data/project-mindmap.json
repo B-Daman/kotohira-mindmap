@@ -1,0 +1,34 @@
+{
+  "centerNode": {
+    "id": "root",
+    "title": "プロジェクト管理",
+    "type": "root",
+    "description": "プロジェクトの全体像と進捗管理"
+  },
+  "nodes": [
+    {
+      "id": "planning",
+      "title": "企画フェーズ",
+      "type": "major_issue",
+      "description": "プロジェクトの企画と準備",
+      "status": "completed",
+      "children": [
+        {
+          "id": "requirements",
+          "title": "要件定義",
+          "type": "issue",
+          "description": "プロジェクトの要件を明確化",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "title": "開発フェーズ",
+      "type": "major_issue",
+      "description": "実装と開発作業",
+      "status": "active",
+      "children": []
+    }
+  ]
+}

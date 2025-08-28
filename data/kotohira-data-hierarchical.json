@@ -1,0 +1,908 @@
+{
+  "centerNode": {
+    "id": "root",
+    "title": "琴平町 消滅可能性自治体からの脱却",
+    "type": "root",
+    "description": "香川県琴平町の地域活性化に向けた総合的な取り組み"
+  },
+  "nodes": [
+    {
+      "id": "population_decline",
+      "title": "人口減少問題",
+      "type": "major_issue",
+      "description": "20-39歳女性50%減少等の深刻な人口問題",
+      "status": "critical",
+      "children": [
+        {
+          "id": "female_population",
+          "title": "20-39歳女性人口50%減少",
+          "type": "issue",
+          "description": "消滅可能性自治体の最重要指標",
+          "urls": [
+            {
+              "label": "第3期 琴平町まち・ひと・しごと創生総合戦略",
+              "url": "https://www.town.kotohira.kagawa.jp/uploaded/life/10545_22247_misc.pdf",
+              "description": "人口推計データ"
+            },
+            {
+              "label": "朝日新聞「消滅可能性自治体」マップ",
+              "url": "https://www.asahi.com/special/population2024/list/",
+              "description": "全国データとの比較"
+            }
+          ],
+          "data": {
+            "currentStatus": "消滅可能性自治体指定",
+            "evidence": "現況調査 第3期 琴平町 まち・ひと・しごと創生総合戦略（令和7年3月）"
+          },
+          "children": [
+            {
+              "id": "relation_population",
+              "title": "関係人口創出",
+              "type": "solution",
+              "description": "地理的・時間的制約を超えた関わり方の提供",
+              "children": [
+                {
+                  "id": "relation_population_current_group",
+                  "title": "現在の取り組み",
+                  "type": "current_effort",
+                  "description": "実施中の具体的な施策",
+                  "children": [
+                    {
+                      "id": "kotohira_connect",
+                      "title": "『コトヒラコネクト』プロジェクト（略称：『コトコト』）",
+                      "type": "current_effort",
+                      "description": "流通科学大学との連携による学生誘致プログラム",
+                      "status": "active",
+                      "children": [
+                        {
+                          "id": "kerry_case",
+                          "title": "ケリーさん（張 心慈）成功事例",
+                          "type": "success",
+                          "description": "学生時代体験→社会人勤務→地域おこし協力隊への流れ",
+                          "urls": [
+                            {
+                              "label": "Facebook記事",
+                              "url": "https://www.facebook.com/kotohira.chiikiokoshi/posts/1007284608264868/"
+                            }
+                          ],
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "otetsutabi",
+                      "title": "おてつたび連携",
+                      "type": "current_effort",
+                      "description": "短期滞在型の関係人口創出プログラム",
+                      "status": "active",
+                      "children": []
+                    },
+                    {
+                      "id": "cooperation_team",
+                      "title": "地域おこし協力隊制度活用",
+                      "type": "current_effort",
+                      "description": "外部人材の受け入れと活用",
+                      "status": "active",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "relation_population_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "dual_residence",
+              "title": "二拠点居住促進",
+              "type": "solution",
+              "description": "都市部との二拠点生活の支援",
+              "children": [
+                {
+                  "id": "dual_residence_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ui_turn_support",
+              "title": "UIターン支援強化",
+              "type": "solution",
+              "description": "移住・定住に向けた総合的支援",
+              "children": [
+                {
+                  "id": "ui_turn_support_current_group",
+                  "title": "現在の取り組み",
+                  "type": "current_effort",
+                  "description": "実施中の具体的な施策",
+                  "children": [
+                    {
+                      "id": "ai_online_income",
+                      "title": "AIを活用したオンライン収入支援",
+                      "type": "current_effort",
+                      "description": "デジタルスキルによる収入機会創出",
+                      "status": "active",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "ui_turn_support_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "youth_outflow",
+          "title": "若者流出",
+          "type": "issue",
+          "description": "進学・就職による若年層の町外流出",
+          "data": {
+            "mainCause": "大学進学時の町外流出",
+            "secondaryCause": "就職機会の不足"
+          },
+          "children": [
+            {
+              "id": "local_employment",
+              "title": "地元就職機会創出",
+              "type": "solution",
+              "description": "魅力的な働く場所の提供",
+              "children": [
+                {
+                  "id": "local_employment_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "online_work_env",
+              "title": "オンラインワーク環境整備",
+              "type": "solution",
+              "description": "場所に縛られない働き方の支援",
+              "children": [
+                {
+                  "id": "online_work_env_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ui_turn",
+          "title": "UIターン促進",
+          "type": "issue",
+          "description": "都市部からの移住者獲得の必要性",
+          "data": {
+            "challenge1": "現在の受け入れ体制不足",
+            "challenge2": "情報発信力の限界"
+          },
+          "children": [
+            {
+              "id": "online_income_opportunity",
+              "title": "AIを活用したオンライン収入機会の提供",
+              "type": "solution",
+              "description": "場所を選ばない収入源の確保支援",
+              "children": [
+                {
+                  "id": "online_income_opportunity_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "dual_residence_pr",
+              "title": "二拠点居住の魅力発信",
+              "type": "solution",
+              "description": "都市と地方の良さを享受できるライフスタイル提案",
+              "children": [
+                {
+                  "id": "dual_residence_pr_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tourism_issue",
+      "title": "観光リピーター不足",
+      "type": "major_issue",
+      "description": "一度きりの観光地からの脱却が課題",
+      "status": "critical",
+      "children": [
+        {
+          "id": "konpira_once",
+          "title": "「一生に一度はこんぴらさん」問題",
+          "type": "issue",
+          "description": "金刀比羅宮参拝が一度きりになる傾向",
+          "data": {
+            "annualVisitors": "年間200-300万人",
+            "problem": "リピーター率の低さ",
+            "pattern": "一回満足で終了"
+          },
+          "children": [
+            {
+              "id": "beyond_konpira",
+              "title": "こんぴらさん以外の魅力発信",
+              "type": "solution",
+              "description": "多様な観光資源の活用",
+              "children": [
+                {
+                  "id": "beyond_konpira_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "experience_value",
+              "title": "体験価値の向上",
+              "type": "solution",
+              "description": "参加型・体験型コンテンツの充実",
+              "children": [
+                {
+                  "id": "experience_value_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "story_route",
+              "title": "ストーリー性のある観光ルート開発",
+              "type": "solution",
+              "description": "歴史と文化を感じる周遊コース",
+              "children": [
+                {
+                  "id": "story_route_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "accommodation_shortage",
+          "title": "宿泊促進不足",
+          "type": "issue",
+          "description": "日帰り観光が多く、経済効果が限定的",
+          "data": {
+            "mainCause": "交通の便の良さが裏目（日帰り観光）",
+            "secondaryCause": "夜間観光スポットの不足"
+          },
+          "children": [
+            {
+              "id": "diverse_accommodation",
+              "title": "多様な宿泊施設の魅力発信",
+              "type": "solution",
+              "description": "歴史ある旅館から新しいスタイルまで",
+              "children": [
+                {
+                  "id": "diverse_accommodation_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "night_events",
+              "title": "夜間イベントの開催",
+              "type": "solution",
+              "description": "夜の観光コンテンツ開発",
+              "children": [
+                {
+                  "id": "night_events_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "accommodation_benefits",
+              "title": "宿泊特典の充実",
+              "type": "solution",
+              "description": "宿泊者限定の特別体験提供",
+              "children": [
+                {
+                  "id": "accommodation_benefits_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tourism_demand_wave",
+          "title": "観光需要の波",
+          "type": "issue",
+          "description": "繁忙期と閑散期の差が激しい",
+          "data": {
+            "peakSeason": "初詣・GW・例大祭・歌舞伎時期",
+            "offSeason": "夏季・冬季の平日",
+            "problem": "人件費制約による人員調整困難"
+          },
+          "children": [
+            {
+              "id": "offseason_events",
+              "title": "閑散期イベントの創出",
+              "type": "solution",
+              "description": "年間を通じた集客イベント企画",
+              "children": [
+                {
+                  "id": "offseason_events_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "student_programs",
+              "title": "学生招致プログラム",
+              "type": "solution",
+              "description": "若者向け体験型プログラムの開発",
+              "children": [
+                {
+                  "id": "student_programs_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "demand_leveling",
+              "title": "繁忙期と閑散期の平準化",
+              "type": "solution",
+              "description": "需要分散による安定運営",
+              "children": [
+                {
+                  "id": "demand_leveling_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "information_dissemination",
+      "title": "情報発信力不足",
+      "type": "major_issue",
+      "description": "効果的な情報発信ができていない",
+      "children": [
+        {
+          "id": "event_info_spread",
+          "title": "イベント情報の拡散不足",
+          "type": "issue",
+          "description": "開催情報が住民や観光客に届いていない",
+          "data": {
+            "problem1": "町内イベント情報が統合されていない",
+            "problem2": "デジタル町民アプリの利用者限定",
+            "problem3": "SNSフォロワー数の少なさ",
+            "feedback": "「後からイベントを知った」という声の多発"
+          },
+          "children": [
+            {
+              "id": "kotohira_dao_account",
+              "title": "琴平DAOアカウントの創設",
+              "type": "solution",
+              "description": "統一的な情報発信プラットフォーム",
+              "children": [
+                {
+                  "id": "kotohira_dao_account_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "multichannel_pr",
+              "title": "情報発信チャネルの多様化",
+              "type": "solution",
+              "description": "様々な媒体での同時発信",
+              "children": [
+                {
+                  "id": "multichannel_pr_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "moderator_system",
+              "title": "モデレーター体制の確立",
+              "type": "solution",
+              "description": "持続可能な運営体制構築",
+              "children": [
+                {
+                  "id": "moderator_system_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "line_openchat",
+          "title": "LINEオープンチャット運営課題",
+          "type": "issue",
+          "description": "一方的な情報提供で双方向性に欠ける",
+          "data": {
+            "currentMembers": "約500名",
+            "activeRate": "低い",
+            "problem1": "モデレーター不在",
+            "problem2": "宣伝投稿のみのコミュニティ化",
+            "problem3": "活発な議論の不足"
+          },
+          "children": [
+            {
+              "id": "dao_openchat",
+              "title": "琴平DAO専用オープンチャット作成",
+              "type": "solution",
+              "description": "目的を明確にしたコミュニティ運営",
+              "children": [
+                {
+                  "id": "dao_openchat_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "moderator_setup",
+              "title": "モデレーター体制の整備",
+              "type": "solution",
+              "description": "継続的な運営管理体制",
+              "children": [
+                {
+                  "id": "moderator_setup_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "community_guidelines",
+              "title": "コミュニティガイドラインの策定",
+              "type": "solution",
+              "description": "健全なコミュニケーション環境整備",
+              "children": [
+                {
+                  "id": "community_guidelines_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tourism_digital",
+          "title": "観光案内のデジタル化",
+          "type": "issue",
+          "description": "紙媒体中心で若年層にリーチできない",
+          "data": {
+            "problem1": "観光客の個別質問への対応不足",
+            "problem2": "地元住民の知識活用不足",
+            "problem3": "リアルタイム情報提供の限界"
+          },
+          "children": [
+            {
+              "id": "discord_tourist_guide",
+              "title": "Discord活用観光案内",
+              "type": "solution",
+              "description": "リアルタイムでの質問対応システム",
+              "children": [
+                {
+                  "id": "discord_tourist_guide_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "elderly_participation",
+              "title": "高齢者参加型情報提供",
+              "type": "solution",
+              "description": "地域の知恵を活かした観光案内",
+              "children": [
+                {
+                  "id": "elderly_participation_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "bot_automation",
+              "title": "ボット活用自動応答",
+              "type": "solution",
+              "description": "よくある質問への自動対応",
+              "children": [
+                {
+                  "id": "bot_automation_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional_disparity",
+      "title": "地域格差",
+      "type": "major_issue",
+      "description": "中心部と周辺部の格差が拡大",
+      "children": [
+        {
+          "id": "info_gap",
+          "title": "中心部と周辺部の情報格差",
+          "type": "issue",
+          "description": "情報やサービスへのアクセスに差がある",
+          "data": {
+            "centerArea": "こんぴらさん周辺の積極的発信",
+            "peripheralArea": "象郷地域・五條・榎井等の情報不足",
+            "awareness": "「何かやってるな」程度の認知"
+          },
+          "children": [
+            {
+              "id": "crossregional_sharing",
+              "title": "地域横断的な情報共有",
+              "type": "solution",
+              "description": "全地域への平等な情報提供",
+              "children": [
+                {
+                  "id": "crossregional_sharing_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "community_center_utilization",
+              "title": "総合センター活用",
+              "type": "solution",
+              "description": "地域拠点での情報発信強化",
+              "children": [
+                {
+                  "id": "community_center_utilization_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "regional_events",
+              "title": "各地域での説明会・イベント開催",
+              "type": "solution",
+              "description": "出張型の情報提供",
+              "children": [
+                {
+                  "id": "regional_events_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "elderly_digital",
+          "title": "高齢者デジタル参加促進",
+          "type": "issue",
+          "description": "デジタルデバイドによる孤立化",
+          "data": {
+            "elderlyRate": "町民の約40%が65歳以上",
+            "problem1": "デジタルツール利用の世代格差",
+            "problem2": "豊富な地域知識の未活用",
+            "problem3": "時間的余裕のある人材の未活用"
+          },
+          "children": [
+            {
+              "id": "smartphone_salon_expansion",
+              "title": "スマホサロンの拡充",
+              "type": "solution",
+              "description": "高齢者向けデジタル教育の充実",
+              "children": [
+                {
+                  "id": "smartphone_salon_expansion_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "gradual_digital_support",
+              "title": "段階的デジタル参加支援",
+              "type": "solution",
+              "description": "レベルに応じた丁寧なサポート",
+              "children": [
+                {
+                  "id": "gradual_digital_support_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "knowledge_utilization",
+              "title": "知識活用の場の提供",
+              "type": "solution",
+              "description": "高齢者の経験を活かす仕組み",
+              "children": [
+                {
+                  "id": "knowledge_utilization_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digital_innovation",
+      "title": "デジタル活用・新技術導入",
+      "type": "major_issue",
+      "description": "最新技術を活用した地域課題解決",
+      "children": [
+        {
+          "id": "dao_utilization",
+          "title": "DAO活用",
+          "type": "issue",
+          "description": "分散型自律組織による地域運営",
+          "data": {
+            "need1": "地理的・時間的制約を超えた参加者募集",
+            "need2": "官民連携のスピード向上要求",
+            "need3": "中間組織としての機能期待"
+          },
+          "children": [
+            {
+              "id": "kotohira_dao_establishment",
+              "title": "琴平町DAO設立",
+              "type": "solution",
+              "description": "新しい形の地域自治組織",
+              "children": [
+                {
+                  "id": "kotohira_dao_establishment_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "mayor_participation",
+              "title": "町長参加型デジタル組織",
+              "type": "solution",
+              "description": "行政と住民の直接対話プラットフォーム",
+              "children": [
+                {
+                  "id": "mayor_participation_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "rapid_solution_system",
+              "title": "迅速な課題解決体制構築",
+              "type": "solution",
+              "description": "意思決定の高速化",
+              "children": [
+                {
+                  "id": "rapid_solution_system_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nft_utilization",
+          "title": "NFT活用",
+          "type": "issue",
+          "description": "地域資源のデジタル化と価値化",
+          "data": {
+            "demand1": "琴平町の歴史的価値のデジタル化",
+            "demand2": "体験価値の新しい販売方法模索",
+            "advantage": "メディア注目度の高さ"
+          },
+          "children": [
+            {
+              "id": "high_value_nft",
+              "title": "高付加価値NFT開発",
+              "type": "solution",
+              "description": "希少性と体験価値の組み合わせ",
+              "children": [
+                {
+                  "id": "high_value_nft_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "experience_bundle",
+              "title": "体験価値とのセット販売",
+              "type": "solution",
+              "description": "デジタルと現実の融合商品",
+              "children": [
+                {
+                  "id": "experience_bundle_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "media_attention_marketing",
+              "title": "話題性を活用した集客",
+              "type": "solution",
+              "description": "メディア露出による認知度向上",
+              "children": [
+                {
+                  "id": "media_attention_marketing_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ai_efficiency",
+          "title": "AI活用・業務効率化",
+          "type": "issue",
+          "description": "行政サービスの効率化と質の向上",
+          "data": {
+            "demand1": "町民・事業者のデジタルスキル向上",
+            "demand2": "業務効率化による生産性向上",
+            "demand3": "売上分析・顧客数推移の可視化"
+          },
+          "children": [
+            {
+              "id": "regular_ai_seminars",
+              "title": "定期的AIセミナー開催",
+              "type": "solution",
+              "description": "継続的なスキルアップ支援",
+              "children": [
+                {
+                  "id": "regular_ai_seminars_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "business_app_support",
+              "title": "事業者向けアプリ活用支援",
+              "type": "solution",
+              "description": "実務に直結するツール導入",
+              "children": [
+                {
+                  "id": "business_app_support_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "analysis_tool_support",
+              "title": "分析ツール導入支援",
+              "type": "solution",
+              "description": "データドリブンな経営支援",
+              "children": [
+                {
+                  "id": "analysis_tool_support_future_group",
+                  "title": "将来的な取り組み",
+                  "type": "future_effort",
+                  "description": "検討中・計画段階の施策",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

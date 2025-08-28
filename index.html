@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>琴平町地域活性化マインドマップ</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>琴平町地域活性化マインドマップ</h1>
+            <nav>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="キーワードで検索...">
+                    <button id="search-btn" aria-label="検索">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="filter-container">
+                    <select id="filter-select">
+                        <option value="">すべて表示</option>
+                        <option value="issue">課題</option>
+                        <option value="solution">対策</option>
+                        <option value="current_effort">現在の取り組み</option>
+                        <option value="future_effort">将来的な取り組み</option>
+                        <option value="success">成功事例</option>
+                    </select>
+                </div>
+                
+                <div class="controls">
+                    <button id="reset-zoom" title="ズームリセット">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="1 4 1 10 7 10"></polyline>
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                        </svg>
+                    </button>
+                    <button id="fullscreen-btn" title="フルスクリーン">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div id="mindmap-container">
+            <div id="mindmap-svg"></div>
+            <div id="minimap"></div>
+        </div>
+        
+        <aside id="info-panel" class="hidden">
+            <button id="close-panel" aria-label="パネルを閉じる">&times;</button>
+            <div id="panel-content">
+                <h2 id="panel-title"></h2>
+                <div id="panel-type" class="node-type"></div>
+                <p id="panel-description"></p>
+                <div id="panel-image"></div>
+                <div id="panel-data"></div>
+                <div id="panel-links"></div>
+            </div>
+        </aside>
+        
+        <div id="tooltip" class="hidden"></div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="legend">
+                <h3>凡例</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-color root"></span>
+                        <span>中心テーマ</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color major-issue"></span>
+                        <span>主要課題</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color issue"></span>
+                        <span>課題</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color solution"></span>
+                        <span>対策</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color success"></span>
+                        <span>成功事例</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color current-effort"></span>
+                        <span>現在の取り組み</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color future-effort"></span>
+                        <span>将来的な取り組み</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="help">
+                <h3>操作方法</h3>
+                <ul>
+                    <li>クリック: 展開/折りたたみ</li>
+                    <li>右クリック: 詳細表示</li>
+                    <li>ダブルクリック: 編集</li>
+                    <li>ドラッグ: 移動</li>
+                    <li>ホイール: ズーム</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

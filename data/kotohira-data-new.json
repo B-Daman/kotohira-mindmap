@@ -1,0 +1,47 @@
+{
+  "centerNode": {
+    "id": "root",
+    "title": "琴平町 消滅可能性自治体からの脱却",
+    "type": "root",
+    "description": "香川県琴平町の地域活性化に向けた総合的な取り組み"
+  },
+  "nodes": [
+    {
+      "id": "population_decline",
+      "title": "人口減少問題",
+      "type": "major_issue",
+      "description": "20-39歳女性50%減少等の深刻な人口問題",
+      "status": "critical",
+      "children": []
+    },
+    {
+      "id": "tourism_issue",
+      "title": "観光リピーター不足",
+      "type": "major_issue",
+      "description": "一度きりの観光地からの脱却が課題",
+      "status": "critical",
+      "children": []
+    },
+    {
+      "id": "information_dissemination",
+      "title": "情報発信力不足",
+      "type": "major_issue",
+      "description": "効果的な情報発信ができていない",
+      "children": []
+    },
+    {
+      "id": "regional_disparity",
+      "title": "地域格差",
+      "type": "major_issue",
+      "description": "中心部と周辺部の格差が拡大",
+      "children": []
+    },
+    {
+      "id": "digital_innovation",
+      "title": "デジタル活用・新技術導入",
+      "type": "major_issue",
+      "description": "最新技術を活用した地域課題解決",
+      "children": []
+    }
+  ]
+}
