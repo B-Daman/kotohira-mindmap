@@ -16,8 +16,8 @@
         {
           "id": "layer1_leader",
           "title": "地元リーダー型",
-          "type": "info",
-          "description": "地域の中核を担うリーダー層",
+          "type": "issue",
+          "description": "地域の中核を担うリーダー層\n必要人数：0名（充足）",
           "children": [
             {
               "id": "layer1_current",
@@ -28,56 +28,67 @@
                 {
                   "id": "member_kataoka",
                   "title": "片岡町長",
-                  "type": "info",
-                  "description": "琴平町長"
+                  "type": "current_effort",
+                  "description": "琴平町長",
+                  "parentId": "layer1_current",
+                  "children": []
                 },
                 {
                   "id": "member_urushihara",
                   "title": "漆原さん",
-                  "type": "info",
-                  "description": "観光協会会長"
+                  "type": "current_effort",
+                  "description": "観光協会会長",
+                  "parentId": "layer1_current",
+                  "children": []
                 },
                 {
                   "id": "member_kusunoki",
                   "title": "楠木さん",
-                  "type": "info",
-                  "description": "琴平バス"
+                  "type": "current_effort",
+                  "description": "琴平バス",
+                  "parentId": "layer1_current",
+                  "children": []
                 },
                 {
                   "id": "member_omi",
                   "title": "近江さん",
-                  "type": "info",
-                  "description": "株式会社地方創生"
+                  "type": "current_effort",
+                  "description": "株式会社地方創生",
+                  "parentId": "layer1_current",
+                  "children": []
                 },
                 {
                   "id": "member_ike",
                   "title": "池さん",
-                  "type": "info",
-                  "description": "五人百姓"
+                  "type": "current_effort",
+                  "description": "五人百姓",
+                  "parentId": "layer1_current",
+                  "children": []
                 },
                 {
                   "id": "member_udon",
                   "title": "udon1GOさん",
-                  "type": "info",
-                  "description": "うどん協会会長"
+                  "type": "current_effort",
+                  "description": "うどん協会会長",
+                  "parentId": "layer1_current",
+                  "children": []
                 }
-              ]
+              ],
+              "parentId": "layer1_leader"
             },
             {
               "id": "layer1_persona",
               "title": "ペルソナ",
               "type": "success",
-              "description": "募集不要（既に充実）"
-            },
-            {
-              "id": "layer1_needed",
-              "title": "必要人数",
-              "type": "success",
-              "description": "0名（充足）"
+              "description": "募集不要（既に充実）",
+              "parentId": "layer1_leader",
+              "children": []
             }
-          ]
+          ],
+          "parentId": "layer1"
         }
-      ]
+      ],
+      "parentId": "root"
     },
     {
       "id": "layer2",
@@ -91,53 +102,42 @@
           "id": "layer2_moderator",
           "title": "モデレーター（Discord/LINE）",
           "type": "issue",
-          "description": "コミュニティ運営の中核",
+          "description": "コミュニティ運営の中核\n必要人数：4名（Discord：2名、LINE：2名）",
           "priority": "最高",
           "children": [
             {
               "id": "moderator_current",
               "title": "現在のメンバー",
               "type": "issue",
-              "description": "秋吉さん（兼任で負担大）"
-            },
-            {
-              "id": "moderator_persona",
-              "title": "ペルソナ：NFT界隈ガヤ型",
-              "type": "info",
-              "description": "Discord活性化の核となる人材",
+              "description": "秋吉さん（兼任で負担大）",
+              "parentId": "layer2_moderator",
               "children": [
                 {
-                  "id": "moderator_age",
-                  "title": "年齢：25-45歳",
-                  "type": "info"
-                },
-                {
-                  "id": "moderator_job",
-                  "title": "職業：フリーランス/リモートワーク",
-                  "type": "info"
-                },
-                {
-                  "id": "moderator_feature",
-                  "title": "特徴：10-30個のDiscord所属",
-                  "type": "info"
-                },
-                {
-                  "id": "moderator_time",
-                  "title": "活動時間：22時-3時",
-                  "type": "info"
-                },
-                {
-                  "id": "moderator_motivation",
-                  "title": "動機：新DAOの初期メンバー、ガヤが日常",
-                  "type": "info"
+                  "title": "あっきー",
+                  "type": "current_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1756364186652_9l2wuhms9",
+                  "parentId": "moderator_current"
                 }
               ]
             },
             {
-              "id": "moderator_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "5-10名"
+              "id": "moderator_persona",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
+              "children": [
+                {
+                  "title": "DANKUさんみたいな人",
+                  "type": "future_effort",
+                  "description": "Discord、LINEオープンチャット活性化の核となる人材\n年齢：25-45歳\n職業：フリーランス/リモートワーク\n特徴：10-30個のDiscord所属\n活動時間：22時-3時\n動機：DAOの初期メンバー、ガヤが日常\nNFT界隈ガヤ型。独身。30代で経済的、時間的余裕がある。チャット文化に抵抗がない。報酬を得ている（ここは考える必要ある）。",
+                  "children": [],
+                  "id": "node_1756140884431_4mzqwfz7v",
+                  "parentId": "moderator_persona"
+                }
+              ],
+              "parentId": "layer2_moderator"
             },
             {
               "id": "moderator_approach",
@@ -146,80 +146,67 @@
               "description": "各DAOへの積極的な働きかけ",
               "children": [
                 {
-                  "id": "approach_ninja",
-                  "title": "Ninja DAO #宣伝-推し活",
-                  "type": "solution"
-                },
-                {
-                  "id": "approach_x2e",
-                  "title": "X2E-DAO #プロジェクト紹介",
-                  "type": "solution"
-                },
-                {
-                  "id": "approach_matatabi",
-                  "title": "またたび屋DAOコラボ相談",
-                  "type": "solution"
-                },
-                {
                   "id": "approach_twitter",
-                  "title": "Twitter #NFT #DAO #地方創生",
-                  "type": "solution"
-                },
-                {
-                  "id": "approach_dm",
-                  "title": "個別DM「初期メンバー募集」",
-                  "type": "solution"
+                  "title": "日々の地道な発信による賛同者",
+                  "type": "solution",
+                  "parentId": "moderator_approach",
+                  "children": [],
+                  "description": "",
+                  "status": "planned"
                 }
-              ]
+              ],
+              "parentId": "layer2_moderator"
             }
-          ]
+          ],
+          "parentId": "layer2"
         },
         {
           "id": "layer2_pr",
-          "title": "広報（音声配信・note）",
+          "title": "広報（音声配信・SNS）",
           "type": "issue",
-          "description": "発信力強化",
+          "description": "発信力強化\n必要人数：1名",
           "priority": "高",
           "children": [
             {
               "id": "pr_current",
               "title": "現在のメンバー",
               "type": "issue",
-              "description": "秋吉さん（兼任）"
-            },
-            {
-              "id": "pr_persona",
-              "title": "ペルソナ：NFT古参インフルエンサー型",
-              "type": "info",
-              "description": "影響力と信頼性を持つ人材",
+              "description": "秋吉さん（兼任）",
+              "parentId": "layer2_pr",
               "children": [
                 {
-                  "id": "pr_cnp",
-                  "title": "CNP初期保有者",
-                  "type": "info"
-                },
-                {
-                  "id": "pr_influence",
-                  "title": "界隈の顔役、影響力大",
-                  "type": "info"
-                },
-                {
-                  "id": "pr_trust",
-                  "title": "発信力と信頼性",
-                  "type": "info"
-                },
-                {
-                  "id": "pr_motivation",
-                  "title": "動機：日本NFT文化育成、地方創生応援",
-                  "type": "info"
+                  "title": "三好さん",
+                  "type": "current_effort",
+                  "description": "- ヒトツブビーズ店の店主（夫が飲食担当）\n- SNS運用、情報発信が得意\n- 副業として、琴平バスのSNS（琴平デジタル町民、琴平mobiなど）運用、情報発信も担当\n- 私のAIセミナーのサムネ作成、SNSでの宣伝",
+                  "children": [],
+                  "id": "node_1756365609205_u61rr1q6p",
+                  "parentId": "pr_current",
+                  "urls": [
+                    {
+                      "label": "ヒトツブビーズ店",
+                      "url": "https://www.instagram.com/hitotububeads/"
+                    }
+                  ],
+                  "status": "planned"
                 }
               ]
             },
             {
-              "id": "pr_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "1-3名"
+              "id": "pr_persona",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
+              "children": [
+                {
+                  "title": "たーなーさんみたいな人",
+                  "type": "future_effort",
+                  "description": "発信力と信頼性\n自分ではコンテンツを持っていないので、発信内容に困っている人。\n報酬（承認要求や見返り）が欲しい方。\nもっと琴平を発信していけるのに・・・！と思っている人。\n動機：日本NFT文化育成、地方創生応援",
+                  "children": [],
+                  "id": "node_1756141151797_gjtb80bk7",
+                  "parentId": "pr_persona"
+                }
+              ],
+              "parentId": "layer2_pr"
             },
             {
               "id": "pr_approach",
@@ -229,69 +216,58 @@
               "children": [
                 {
                   "id": "pr_dm",
-                  "title": "直接DM（リスペクト込み）",
-                  "type": "solution"
+                  "title": "日々の地道な発信による賛同者",
+                  "type": "solution",
+                  "parentId": "pr_approach",
+                  "children": [],
+                  "description": "",
+                  "status": "planned"
                 },
                 {
                   "id": "pr_advice",
                   "title": "「アドバイスください」スタンス",
-                  "type": "solution"
-                },
-                {
-                  "id": "pr_intro",
-                  "title": "インフルエンサー経由の紹介",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "pr_approach",
+                  "children": []
                 }
-              ]
+              ],
+              "parentId": "layer2_pr"
             }
-          ]
+          ],
+          "parentId": "layer2"
         },
         {
           "id": "layer2_creator",
           "title": "クリエイター",
           "type": "issue",
-          "description": "ビジュアル制作の担い手",
+          "description": "ビジュアル制作の担い手\n必要人数：1～2名",
           "priority": "高",
           "children": [
             {
               "id": "creator_current",
               "title": "現在のメンバー",
               "type": "issue",
-              "description": "不足"
+              "description": "不足",
+              "parentId": "layer2_creator",
+              "children": []
             },
             {
               "id": "creator_persona",
-              "title": "ペルソナ：NFTクリエイター/コレクター型",
-              "type": "info",
-              "description": "クリエイティブな活動を支える人材",
+              "title": "ペルソナ",
+              "type": "issue",
+              "description": "",
               "children": [
                 {
-                  "id": "creator_age",
-                  "title": "年齢：25-50歳",
-                  "type": "info"
-                },
-                {
-                  "id": "creator_job",
-                  "title": "職業：デザイナー/アーティスト",
-                  "type": "info"
-                },
-                {
-                  "id": "creator_feature",
-                  "title": "特徴：新PJ応援好き",
-                  "type": "info"
-                },
-                {
-                  "id": "creator_motivation",
-                  "title": "動機：地方×アート、作品発表の場",
-                  "type": "info"
+                  "title": "よこやまひろこさん",
+                  "type": "future_effort",
+                  "description": "クリエイティブな活動を支える人材\n年齢：25-50歳\n職業：デザイナー/アーティスト\n特徴：新PJ応援、香川県好き\n動機：地方×アート、作品発表の場",
+                  "children": [],
+                  "id": "node_1756141377777_glx40uzur",
+                  "parentId": "creator_persona",
+                  "status": "planned"
                 }
-              ]
-            },
-            {
-              "id": "creator_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "3-5名"
+              ],
+              "parentId": "layer2_creator"
             },
             {
               "id": "creator_approach",
@@ -300,30 +276,20 @@
               "description": "クリエイターコミュニティへの働きかけ",
               "children": [
                 {
-                  "id": "creator_opensea",
-                  "title": "OpenSea/Foundation作家にDM",
-                  "type": "solution"
-                },
-                {
                   "id": "creator_discord",
                   "title": "NFTアート系Discord",
-                  "type": "solution"
-                },
-                {
-                  "id": "creator_dao",
-                  "title": "クリエイターDAO",
-                  "type": "solution"
-                },
-                {
-                  "id": "creator_coconala",
-                  "title": "ココナラでスカウト",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "creator_approach",
+                  "children": []
                 }
-              ]
+              ],
+              "parentId": "layer2_creator"
             }
-          ]
+          ],
+          "parentId": "layer2"
         }
-      ]
+      ],
+      "parentId": "root"
     },
     {
       "id": "layer3",
@@ -337,48 +303,65 @@
           "id": "layer3_info",
           "title": "情報収集（Instagram/Facebook/リアル）",
           "type": "issue",
-          "description": "地域情報の収集と発信",
+          "description": "地域情報の収集と発信\n必要人数：3～5名",
           "priority": "中",
           "children": [
             {
               "id": "info_current",
               "title": "現在のメンバー",
               "type": "info",
-              "description": "地元盛り上げ役（共創DAOメンバー）、池さん（兼任）"
-            },
-            {
-              "id": "info_persona",
-              "title": "ペルソナ：地元若手実働型",
-              "type": "info",
-              "description": "地元の実働部隊",
+              "description": "地元盛り上げ役（共創DAOメンバー）、池さん（兼任）",
+              "parentId": "layer3_info",
               "children": [
                 {
-                  "id": "info_age",
-                  "title": "年齢：18-39歳",
-                  "type": "info"
+                  "title": "葉さん",
+                  "type": "current_effort",
+                  "description": "地域おこし協力隊",
+                  "children": [],
+                  "id": "node_1756365471263_vzqy0ygu5",
+                  "parentId": "info_current"
                 },
                 {
-                  "id": "info_location",
-                  "title": "居住：香川県内",
-                  "type": "info"
+                  "title": "三好さん",
+                  "type": "current_effort",
+                  "description": "- ヒトツブビーズ店の店主（夫が飲食担当）\n- SNS運用、情報発信が得意\n- 副業として、琴平バスのSNS（琴平デジタル町民、琴平mobiなど）運用、情報発信も担当\n- 私のAIセミナーのサムネ作成、SNSでの宣伝",
+                  "children": [],
+                  "id": "node_1756365502164_cxtcw4hs2",
+                  "parentId": "info_current",
+                  "urls": [
+                    {
+                      "label": "ヒトツブビーズ店",
+                      "url": "https://www.instagram.com/hitotububeads/"
+                    }
+                  ],
+                  "status": "planned"
                 },
                 {
-                  "id": "info_feature",
-                  "title": "特徴：フットワーク軽い、SNS活用",
-                  "type": "info"
-                },
-                {
-                  "id": "info_motivation",
-                  "title": "動機：地域愛、スキル活用",
-                  "type": "info"
+                  "title": "あっきー",
+                  "type": "current_effort",
+                  "description": "兼任",
+                  "children": [],
+                  "id": "node_1756365545048_qjoq5nohv",
+                  "parentId": "info_current"
                 }
               ]
             },
             {
-              "id": "info_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "5名追加"
+              "id": "info_persona",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
+              "children": [
+                {
+                  "title": "モーリーさんみたいな人",
+                  "type": "future_effort",
+                  "description": "年齢：18-39歳\n居住：全国\n特徴：他の都道府県から見た香川情報。情報へのアクセスが早い、SNS活用\n動機：承認要求、スキル活用",
+                  "children": [],
+                  "id": "node_1756141601388_7u153efy6",
+                  "parentId": "info_persona"
+                }
+              ],
+              "parentId": "layer3_info"
             },
             {
               "id": "info_approach",
@@ -388,27 +371,27 @@
               "children": [
                 {
                   "id": "info_kyoryokutai",
-                  "title": "地域おこし協力隊勧誘",
-                  "type": "solution"
-                },
-                {
-                  "id": "info_uturn",
-                  "title": "Uターン者コミュニティ",
-                  "type": "solution"
-                },
-                {
-                  "id": "info_it",
-                  "title": "地元IT企業",
-                  "type": "solution"
+                  "title": "地域おこし協力隊",
+                  "type": "solution",
+                  "parentId": "info_approach",
+                  "children": [],
+                  "description": "",
+                  "status": "planned"
                 },
                 {
                   "id": "info_coworking",
-                  "title": "コワーキングスペース",
-                  "type": "solution"
+                  "title": "情報発信者のSNSフォロー",
+                  "type": "solution",
+                  "parentId": "info_approach",
+                  "children": [],
+                  "description": "",
+                  "status": "planned"
                 }
-              ]
+              ],
+              "parentId": "layer3_info"
             }
-          ]
+          ],
+          "parentId": "layer3"
         },
         {
           "id": "layer3_event",
@@ -420,37 +403,60 @@
             {
               "id": "event_current",
               "title": "現在のメンバー",
-              "type": "info",
-              "description": "コトリ従業員、地方創生従業員、香川大学「またたび」、流通経済大学「コトコト」"
-            },
-            {
-              "id": "event_persona",
-              "title": "ペルソナ：大学生研究型",
-              "type": "info",
-              "description": "研究と実践を兼ねた参加",
+              "type": "solution",
+              "description": "コトリ従業員、地方創生従業員",
+              "parentId": "layer3_event",
               "children": [
                 {
-                  "id": "event_age",
-                  "title": "年齢：18-25歳",
-                  "type": "info"
+                  "title": "香川大学「またたび」",
+                  "type": "current_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1756219035945_xjf2hu1m0",
+                  "parentId": "event_current"
                 },
                 {
-                  "id": "event_major",
-                  "title": "専攻：地域政策/観光学",
-                  "type": "info"
+                  "title": "流通経済大学「コトコト」",
+                  "type": "current_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1756219049528_5qodi3sun",
+                  "parentId": "event_current"
                 },
                 {
-                  "id": "event_motivation",
-                  "title": "動機：卒論研究、就活アピール、実践経験",
-                  "type": "info"
+                  "title": "共創DAO",
+                  "type": "current_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1756219130388_x4r1wx5n4",
+                  "parentId": "event_current"
                 }
               ]
             },
             {
-              "id": "event_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "10名追加"
+              "id": "event_persona",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
+              "children": [
+                {
+                  "title": "大学生研究型",
+                  "type": "future_effort",
+                  "description": "研究と実践を兼ねた参加\n年齢：18-25歳\n専攻：地域政策/観光学\n動機：卒論研究、就活アピール、実践経験",
+                  "children": [],
+                  "id": "node_1756218978780_86nill24x",
+                  "parentId": "event_persona"
+                },
+                {
+                  "title": "近隣の高校生・中学生",
+                  "type": "future_effort",
+                  "description": "琴平高校・教育委員会などにヘルプ依頼",
+                  "children": [],
+                  "id": "node_1756365892486_380rw0lc4",
+                  "parentId": "event_persona"
+                }
+              ],
+              "parentId": "layer3_event"
             },
             {
               "id": "event_approach",
@@ -461,73 +467,88 @@
                 {
                   "id": "event_professor",
                   "title": "ゼミ教授経由",
-                  "type": "solution"
-                },
-                {
-                  "id": "event_conference",
-                  "title": "学会発表での勧誘",
-                  "type": "solution"
-                },
-                {
-                  "id": "event_fieldwork",
-                  "title": "フィールドワーク補助申請サポート",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "event_approach",
+                  "children": []
                 },
                 {
                   "id": "event_material",
                   "title": "「生きた教材」アピール",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "event_approach",
+                  "children": []
+                },
+                {
+                  "title": "教育委員会・琴平高校へ直接",
+                  "type": "future_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1756365918548_002s29wg9",
+                  "parentId": "event_approach"
                 }
-              ]
+              ],
+              "parentId": "layer3_event"
             }
-          ]
+          ],
+          "parentId": "layer3"
         },
         {
           "id": "layer3_general",
           "title": "一般参加者（ガヤ・自然な拡散）",
           "type": "issue",
-          "description": "コミュニティの賑わいを作る",
+          "description": "コミュニティの賑わいを作る\n必要人数：5～10名",
           "priority": "中",
           "children": [
             {
               "id": "general_current",
               "title": "現在のメンバー",
               "type": "info",
-              "description": "Discord表の15名の一部"
-            },
-            {
-              "id": "general_persona",
-              "title": "ペルソナ：マルチDAO巡回型",
-              "type": "info",
-              "description": "軽い参加でOKな層",
+              "description": "Discord表の15名の一部",
+              "parentId": "layer3_general",
               "children": [
                 {
-                  "id": "general_feature1",
-                  "title": "複数コミュニティ所属",
-                  "type": "info"
-                },
-                {
-                  "id": "general_feature2",
-                  "title": "新しいDAO好き",
-                  "type": "info"
-                },
-                {
-                  "id": "general_feature3",
-                  "title": "たまに顔出す程度でOK",
-                  "type": "info"
-                },
-                {
-                  "id": "general_motivation",
-                  "title": "動機：面白そう、暇つぶし",
-                  "type": "info"
+                  "title": "たーなーさん",
+                  "type": "current_effort",
+                  "description": "",
+                  "children": [],
+                  "id": "node_1756365998447_lh7bbo7j4",
+                  "parentId": "general_current",
+                  "status": "planned"
                 }
               ]
             },
             {
-              "id": "general_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "20-30名"
+              "id": "general_persona",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
+              "children": [
+                {
+                  "title": "スギシゲさん",
+                  "type": "future_effort",
+                  "description": "軽い参加でOKな層\n複数コミュニティ所属\n新しいDAO好き\nたまに顔出す程度でOK\n動機：面白そう、暇つぶし",
+                  "children": [],
+                  "id": "node_1756219260845_if1886d2c",
+                  "parentId": "general_persona"
+                },
+                {
+                  "title": "16snow【ひろゆき】みたいな方",
+                  "type": "future_effort",
+                  "description": "スキルをDAOで試してみたい方。\nコミュニティの承認要求を満たしたい方。",
+                  "children": [],
+                  "id": "node_1756366268751_0thembbvg",
+                  "parentId": "general_persona"
+                },
+                {
+                  "title": "あっきーみたいな人",
+                  "type": "future_effort",
+                  "description": "リモートワーク\n比較的時間的余裕・自由がある\nコメントに抵抗感がない",
+                  "children": [],
+                  "id": "node_1756366523876_hxeedjfnb",
+                  "parentId": "general_persona"
+                }
+              ],
+              "parentId": "layer3_general"
             },
             {
               "id": "general_approach",
@@ -538,28 +559,25 @@
                 {
                   "id": "general_announce",
                   "title": "他DAOでの告知",
-                  "type": "solution"
-                },
-                {
-                  "id": "general_benefit",
-                  "title": "「初期メンバー特典」",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "general_approach",
+                  "children": []
                 },
                 {
                   "id": "general_rom",
                   "title": "「ROM専歓迎」明記",
-                  "type": "solution"
-                },
-                {
-                  "id": "general_gamify",
-                  "title": "レベルシステムでゲーム化",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "general_approach",
+                  "children": []
                 }
-              ]
+              ],
+              "parentId": "layer3_general"
             }
-          ]
+          ],
+          "parentId": "layer3"
         }
-      ]
+      ],
+      "parentId": "root"
     },
     {
       "id": "layer4",
@@ -580,41 +598,26 @@
               "id": "migration_current",
               "title": "現在のメンバー",
               "type": "issue",
-              "description": "なし"
+              "description": "なし",
+              "parentId": "layer4_migration",
+              "children": []
             },
             {
               "id": "migration_persona",
-              "title": "ペルソナ：都市部リモートワーカー型",
-              "type": "info",
-              "description": "移住前の関係構築を求める層",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
               "children": [
                 {
-                  "id": "migration_age",
-                  "title": "年齢：25-45歳",
-                  "type": "info"
-                },
-                {
-                  "id": "migration_job",
-                  "title": "職業：リモートワーク可能",
-                  "type": "info"
-                },
-                {
-                  "id": "migration_timing",
-                  "title": "検討時期：1-2年内",
-                  "type": "info"
-                },
-                {
-                  "id": "migration_motivation",
-                  "title": "動機：移住前の関係構築、情報収集",
-                  "type": "info"
+                  "title": "都市部リモートワーカー型",
+                  "type": "issue",
+                  "description": "移住前の関係構築を求める層\n年齢：25-45歳\n職業：リモートワーク可能\n検討時期：1-2年内\n動機：移住前の関係構築、情報収集",
+                  "children": [],
+                  "id": "node_1756219500266_hyu1438ey",
+                  "parentId": "migration_persona"
                 }
-              ]
-            },
-            {
-              "id": "migration_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "5-10名"
+              ],
+              "parentId": "layer4_migration"
             },
             {
               "id": "migration_approach",
@@ -624,27 +627,37 @@
               "children": [
                 {
                   "id": "migration_smout",
-                  "title": "SMOUT記事投稿",
-                  "type": "solution"
+                  "title": "メディア記事投稿",
+                  "type": "solution",
+                  "parentId": "migration_approach",
+                  "children": []
                 },
                 {
                   "id": "migration_fair",
                   "title": "移住フェアブース",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "migration_approach",
+                  "children": []
                 },
                 {
                   "id": "migration_dual",
                   "title": "二拠点生活コミュニティ",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "migration_approach",
+                  "children": []
                 },
                 {
                   "id": "migration_trial",
                   "title": "お試し移住プログラム",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "migration_approach",
+                  "children": []
                 }
-              ]
+              ],
+              "parentId": "layer4_migration"
             }
-          ]
+          ],
+          "parentId": "layer4"
         },
         {
           "id": "layer4_supporter",
@@ -657,41 +670,26 @@
               "id": "supporter_current",
               "title": "現在のメンバー",
               "type": "info",
-              "description": "Suueiさん、むなかたさん、Konさん（あなたの友人）"
+              "description": "Suueiさん、むなかたさん、Konさん（あなたの友人）",
+              "parentId": "layer4_supporter",
+              "children": []
             },
             {
               "id": "supporter_persona",
-              "title": "ペルソナ：香川出身都市在住型",
-              "type": "info",
-              "description": "故郷への愛着を持つ層",
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
               "children": [
                 {
-                  "id": "supporter_age",
-                  "title": "年齢：30-50歳",
-                  "type": "info"
-                },
-                {
-                  "id": "supporter_location",
-                  "title": "居住：東京・大阪等",
-                  "type": "info"
-                },
-                {
-                  "id": "supporter_feature",
-                  "title": "特徴：故郷への愛着",
-                  "type": "info"
-                },
-                {
-                  "id": "supporter_motivation",
-                  "title": "動機：恩返し、子供に誇れる故郷",
-                  "type": "info"
+                  "title": "香川出身都市在住型",
+                  "type": "issue",
+                  "description": "故郷への愛着を持つ層\n年齢：30-50歳\n居住：東京・大阪等\n特徴：故郷への愛着\n動機：恩返し、子供に誇れる故郷",
+                  "children": [],
+                  "id": "node_1756219951486_nx4um2o33",
+                  "parentId": "supporter_persona"
                 }
-              ]
-            },
-            {
-              "id": "supporter_needed",
-              "title": "必要人数",
-              "type": "issue",
-              "description": "10-20名"
+              ],
+              "parentId": "layer4_supporter"
             },
             {
               "id": "supporter_approach",
@@ -702,28 +700,56 @@
                 {
                   "id": "supporter_kenjinkai",
                   "title": "県人会での告知",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "supporter_approach",
+                  "children": []
                 },
                 {
                   "id": "supporter_alumni",
                   "title": "同窓会ネットワーク",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "supporter_approach",
+                  "children": []
                 },
                 {
                   "id": "supporter_furusato",
                   "title": "ふるさと納税者へDM",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "supporter_approach",
+                  "children": []
                 },
                 {
                   "id": "supporter_sns",
                   "title": "香川出身者SNSグループ",
-                  "type": "solution"
+                  "type": "solution",
+                  "parentId": "supporter_approach",
+                  "children": []
                 }
-              ]
+              ],
+              "parentId": "layer4_supporter"
             }
-          ]
+          ],
+          "parentId": "layer4"
+        },
+        {
+          "title": "観光検討者",
+          "type": "issue",
+          "description": "",
+          "children": [
+            {
+              "title": "ペルソナ",
+              "type": "major_issue",
+              "description": "",
+              "children": [],
+              "id": "node_1756366612555_5s4pv8sin",
+              "parentId": "node_1756366587444_h2z54pyed"
+            }
+          ],
+          "id": "node_1756366587444_h2z54pyed",
+          "parentId": "layer4"
         }
-      ]
+      ],
+      "parentId": "root"
     },
     {
       "id": "priority",
@@ -741,17 +767,24 @@
           "children": [
             {
               "id": "priority1_moderator",
-              "title": "NFT界隈ガヤ型モデレーター",
+              "title": "ガヤ",
               "type": "solution",
-              "description": "5名確保でDiscord活性化"
+              "description": "5名確保でDiscord活性化",
+              "parentId": "priority1",
+              "children": [],
+              "status": "planned"
             },
             {
               "id": "priority1_creator",
-              "title": "NFTクリエイター",
+              "title": "モデレーター",
               "type": "solution",
-              "description": "2名確保でビジュアル改善"
+              "description": "1名確保で精神的余裕確保",
+              "parentId": "priority1",
+              "children": [],
+              "status": "planned"
             }
-          ]
+          ],
+          "parentId": "priority"
         },
         {
           "id": "priority2",
@@ -764,15 +797,20 @@
               "id": "priority2_local",
               "title": "地元若手実働型",
               "type": "solution",
-              "description": "情報収集・イベント運営"
+              "description": "情報収集・イベント運営",
+              "parentId": "priority2",
+              "children": []
             },
             {
               "id": "priority2_student",
               "title": "大学生研究型",
               "type": "solution",
-              "description": "現地の手伝い"
+              "description": "現地の手伝い",
+              "parentId": "priority2",
+              "children": []
             }
-          ]
+          ],
+          "parentId": "priority"
         },
         {
           "id": "priority3",
@@ -785,17 +823,23 @@
               "id": "priority3_migration",
               "title": "移住検討者",
               "type": "solution",
-              "description": "将来の担い手"
+              "description": "将来の担い手",
+              "parentId": "priority3",
+              "children": []
             },
             {
               "id": "priority3_supporter",
               "title": "香川応援者",
               "type": "solution",
-              "description": "関係人口拡大"
+              "description": "関係人口拡大",
+              "parentId": "priority3",
+              "children": []
             }
-          ]
+          ],
+          "parentId": "priority"
         }
-      ]
+      ],
+      "parentId": "root"
     }
   ]
 }
