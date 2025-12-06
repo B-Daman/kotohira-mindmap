@@ -28,7 +28,7 @@
             {
               "id": "cat1-1-2",
               "title": "1-1-2. 生成AI利用ガイドライン策定・導入支援",
-              "type": "solution",
+              "type": "success",
               "description": "他自治体のガイドライン調査。琴平町役場版ガイドラインの叩き台作成。企画防災課による正式化への橋渡し。",
               "children": []
             },
@@ -64,28 +64,36 @@
             {
               "id": "cat1-2-1",
               "title": "1-2-1. 定期AI勉強会（無料セミナー）",
-              "type": "success",
+              "type": "current_effort",
               "description": "火曜：琴平町総合センター（13:00〜）、木曜：コトリ コワーキング＆ホステル琴平（18:00〜）。対象：事業者・住民・近隣自治体の議員・学生など。AIの基礎・安全な使い方、SNS発信、資料作成、文章要約などの実務活用。累計240名以上参加、満足度4.55/5。",
-              "children": []
+              "children": [
+                {
+                  "title": "AIセミナーのチラシ配り",
+                  "type": "future_effort",
+                  "description": "まずはAIセミナーの存在を知ってもらう\n・教育委員会\n・回覧板\nなど",
+                  "children": [],
+                  "id": "node_1765028644557_q3ienf4z9"
+                }
+              ]
             },
             {
               "id": "cat1-2-2",
               "title": "1-2-2. 琴平町パソコン・AIおたすけサポート",
-              "type": "solution",
+              "type": "future_effort",
               "description": "準備中。料金体系（5,000円／60分〜）の設計。チラシ作成・サービス説明文の作成。議員さん宅に訪問してPC・AIツールの初期設定支援実績あり。",
               "children": []
             },
             {
               "id": "cat1-2-3",
               "title": "1-2-3. 民間向けAI導入コンサルティング",
-              "type": "solution",
+              "type": "future_effort",
               "description": "準備中。店舗・事業者の業務フローのヒアリング。「どこにAIを差し込むか」の設計・提案。効果的なサポートを提供。将来的な有料サービスとしての展開準備。",
               "children": []
             },
             {
               "id": "cat1-2-4",
               "title": "1-2-4. AIプロンプト作成勉強会（有料セミナー）",
-              "type": "issue",
+              "type": "future_effort",
               "description": "準備中。実際に業務効率化ができるAIプロンプトの作成支援。SNS発信、資料作成、文章要約などの実務活用。",
               "children": []
             }
@@ -287,7 +295,7 @@
               "children": [
                 {
                   "id": "cat4-1-4-1",
-                  "title": "あるやうむ（2024年11月27日）",
+                  "title": "PRTIMES（2024年11月27日）",
                   "type": "success",
                   "description": "【四国初】香川県琴平町で地域おこし協力隊DAOの取り組み開始。地域おこし協力隊（DAOマネージャー）への就任時に公開した記事。",
                   "url": "https://prtimes.jp/main/html/rd/p/000000128.000091165.html",
