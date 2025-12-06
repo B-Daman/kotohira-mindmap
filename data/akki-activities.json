@@ -227,7 +227,7 @@
       "id": "cat3-3",
       "title": "3-3. 高付加価値NFTプラットフォーム「TOKKEN」サポート",
       "type": "subcategory",
-      "description": "あるやうむ主導の自治体連携NFTプラットフォーム「TOKKEN」への協力。琴平町では「金丸座の"せり"に乗る権利」などの高付加価値NFTを発売。役場職員へのNFT説明・ユースケース提案。地元企業と連携したNFT商品の方向性検討。",
+      "description": "あるやうむ主導の自治体連携NFTプラットフォーム「TOKKEN」への協力。琴平町では「金丸座のせりに乗る権利」などの高付加価値NFTを発売。役場職員へのNFT説明・ユースケース提案。地元企業と連携したNFT商品の方向性検討。",
       "parentId": "cat3"
     },
     {
@@ -464,7 +464,7 @@
     },
     {
       "id": "future-1",
-      "title": "AIを"町の標準ツール"にする",
+      "title": "AIを町の標準ツールにする",
       "type": "issue",
       "description": "役場・民間問わずAIが当たり前に使われる環境づくり",
       "parentId": "future"
@@ -506,7 +506,7 @@
     },
     {
       "id": "mission-1",
-      "title": "AIで町の"困りごと"を軽くする仕組みをつくる",
+      "title": "AIで町の困りごとを軽くする仕組みをつくる",
       "type": "mission",
       "description": "業務効率化による職員・住民の負担軽減",
       "parentId": "mission"
