@@ -18,7 +18,12 @@ export class MindMap {
                 success: 160,
                 reference: 140,
                 current_effort: 160,
-                future_effort: 160
+                future_effort: 160,
+                category: 200,
+                subcategory: 180,
+                stats: 180,
+                future: 180,
+                mission: 200
             },
             nodeHeight: {
                 root: 60,
@@ -28,7 +33,12 @@ export class MindMap {
                 success: 40,
                 reference: 35,
                 current_effort: 40,
-                future_effort: 40
+                future_effort: 40,
+                category: 50,
+                subcategory: 45,
+                stats: 45,
+                future: 45,
+                mission: 50
             },
             levelDistance: 320,  // 横方向の階層間隔を増やす
             siblingDistance: 60,  // 縦方向の兄弟間隔を減らす
