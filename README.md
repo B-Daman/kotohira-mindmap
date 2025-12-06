@@ -6,6 +6,36 @@
 
 このプロジェクトは、琴平町が直面する「消滅可能性自治体」からの脱却を目指し、地域の課題と解決策を視覚的に整理・共有するためのWebアプリケーションです。
 
+## 📚 利用可能なマインドマップ
+
+### 1. 琴平町 地域活性化（デフォルト）
+琴平町の消滅可能性自治体からの脱却に向けた総合的な取り組み
+- アクセス: `index.html` または `index.html?map=kotohira`
+
+### 2. あっきーの活動マインドマップ 🗺️
+地域おこし協力隊「あっきー」のAI・DAO活用による地域活性化活動の全体像
+- アクセス: `index.html?map=akki-activities`
+- 主な内容:
+  - AI活用した業務効率化（AIセミナー240名以上参加）
+  - DAOによる地域活性化・関係人口創出（189名参加）
+  - 地域プロジェクト・イベント運営サポート
+  - メディア・広報・情報発信
+  - 研修・政策提言・外部連携
+
+### 3. 琴平DAO ペルソナ設計
+Discord活性化のための戦略的人材募集計画
+- アクセス: `index.html?map=dao-persona`
+
+### 4. 地域おこし協力隊 個人目標
+DAOマネージャー卒業までの個人目標
+- アクセス: `index.html?map=personal-goals`
+
+### 5. その他のマインドマップ
+- プロジェクト管理: `index.html?map=project`
+- アイデア整理: `index.html?map=ideas`
+
+すべてのマインドマップは `select-mindmap.html` から選択できます。
+
 ## 主な機能
 
 - 📊 **階層構造の可視化**: 中心テーマから放射状に展開するマインドマップ
@@ -141,6 +171,19 @@ Node.jsを使用する場合：
 ```bash
 npx http-server
 ```
+
+## GitHub Pagesでの公開
+
+このプロジェクトはGitHub Pagesで公開できます：
+
+1. GitHubリポジトリにpush
+2. Settings → Pages → Source を `main` ブランチの `/root` に設定
+3. 公開URL: `https://ユーザー名.github.io/リポジトリ名/`
+
+### アクセス例
+- デフォルト: `https://ユーザー名.github.io/リポジトリ名/`
+- 選択画面: `https://ユーザー名.github.io/リポジトリ名/select-mindmap.html`
+- あっきーの活動: `https://ユーザー名.github.io/リポジトリ名/index.html?map=akki-activities`
 
 ## ライセンス
 

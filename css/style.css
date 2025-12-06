@@ -318,6 +318,31 @@ footer .container {
     background-color: #8e44ad;
 }
 
+.legend-color.category,
+.node-type.category {
+    background-color: #3498db;
+}
+
+.legend-color.subcategory,
+.node-type.subcategory {
+    background-color: #5dade2;
+}
+
+.legend-color.stats,
+.node-type.stats {
+    background-color: #f39c12;
+}
+
+.legend-color.future,
+.node-type.future {
+    background-color: #9b59b6;
+}
+
+.legend-color.mission,
+.node-type.mission {
+    background-color: #e74c3c;
+}
+
 /* 担当者ノードのスタイル（対策系ノードのみ） */
 .node.solution.my-active rect,
 .node.current-effort.my-active rect,
@@ -458,6 +483,31 @@ footer .container {
 .node.future-effort rect {
     fill: #8e44ad;
     fill-opacity: 1;
+}
+
+.node.category rect {
+    fill: #3498db;
+    fill-opacity: 0.9;
+}
+
+.node.subcategory rect {
+    fill: #5dade2;
+    fill-opacity: 0.85;
+}
+
+.node.stats rect {
+    fill: #f39c12;
+    fill-opacity: 0.9;
+}
+
+.node.future rect {
+    fill: #9b59b6;
+    fill-opacity: 0.85;
+}
+
+.node.mission rect {
+    fill: #e74c3c;
+    fill-opacity: 0.9;
 }
 
 .node.collapsed rect {

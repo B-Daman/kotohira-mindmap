@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あっきーの活動マインドマップ | AI × DAOでつくる「関わりしろのあるまち」琴平町</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="琴平町地域おこし協力隊「あっきー」のAI・DAO活用による地域活性化活動の全体像を可視化したマインドマップ">
+    <meta name="keywords" content="琴平町,地域おこし協力隊,DAO,AI,地域活性化,関係人口">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🗺️ あっきーの活動マインドマップ</h1>
+            <nav>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="ノードを検索...">
+                    <button id="search-btn">🔍</button>
+                </div>
+
+                <div class="filter-container">
+                    <select id="filter-select">
+                        <option value="">すべて表示</option>
+                        <option value="category">カテゴリ</option>
+                        <option value="subcategory">サブカテゴリ</option>
+                        <option value="success">成功事例</option>
+                        <option value="solution">対策・実施中</option>
+                        <option value="issue">課題・準備中</option>
+                        <option value="stats">実績</option>
+                        <option value="future">今後の展望</option>
+                        <option value="mission">ミッション</option>
+                    </select>
+                </div>
+
+                <div class="controls">
+                    <button id="zoom-in" title="拡大">🔍+</button>
+                    <button id="zoom-out" title="縮小">🔍-</button>
+                    <button id="zoom-reset" title="リセット">🔄</button>
+                    <button id="export-btn" title="エクスポート">⬇️</button>
+                    <button id="import-btn" title="インポート">⬆️</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div id="mindmap-container">
+            <svg id="mindmap-svg"></svg>
+            <div id="minimap"></div>
+        </div>
+
+        <!-- Info Panel -->
+        <aside id="info-panel" class="hidden">
+            <button id="close-panel">×</button>
+            <h2 id="panel-title"></h2>
+            <span class="node-type"></span>
+            <p id="panel-description"></p>
+            <div id="panel-urls"></div>
+            <div id="panel-data"></div>
+        </aside>
+    </main>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="hidden"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="legend">
+                <h3>凡例</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-color root"></span>
+                        <span>中心テーマ</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color category"></span>
+                        <span>カテゴリ</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color subcategory"></span>
+                        <span>サブカテゴリ</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color success"></span>
+                        <span>成功事例</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color solution"></span>
+                        <span>対策・実施中</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color issue"></span>
+                        <span>課題・準備中</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color stats"></span>
+                        <span>実績</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color future"></span>
+                        <span>今後の展望</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color mission"></span>
+                        <span>ミッション</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help">
+                <h3>操作方法</h3>
+                <ul>
+                    <li>クリック: 展開/折りたたみ</li>
+                    <li>右クリック: 詳細表示</li>
+                    <li>ダブルクリック: 編集</li>
+                    <li>ドラッグ: 移動</li>
+                    <li>ホイール: ズーム</li>
+                </ul>
+            </div>
+
+            <div class="about">
+                <h3>について</h3>
+                <p>琴平町地域おこし協力隊「あっきー」のAI・DAO活用による地域活性化活動の全体像</p>
+                <p>
+                    <strong>主な活動:</strong>
+                    <br>・AIセミナー（累計240名以上参加）
+                    <br>・琴平町DAO運営（189名参加）
+                    <br>・地域プロジェクト支援
+                    <br>・メディア露出・情報発信
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script type="module">
+        import { DataManager } from './js/data.js';
+        import { MindMap } from './js/mindmap.js';
+        import { UIController } from './js/ui.js';
+        import { UrlPreview } from './js/url-preview.js';
+        import { ContextMenu } from './js/context-menu.js';
+        import { DataPersistence } from './js/data-persistence.js';
+        import { AutoSave } from './js/auto-save.js';
+
+        class App {
+            constructor() {
+                this.dataManager = new DataManager();
+                this.mindmap = null;
+                this.uiController = null;
+                this.urlPreview = null;
+                this.contextMenu = null;
+                this.dataPersistence = null;
+                this.autoSave = null;
+                this.config = {
+                    // あっきーの活動マインドマップデータ
+                    dataUrl: 'data/akki-activities.json'
+                };
+            }
+
+            async init() {
+                try {
+                    console.log('Starting application initialization...');
+
+                    this.showInitialLoading();
+                    this.setupDataListeners();
+
+                    // 自動保存機能を初期化（デフォルトで無効）
+                    this.autoSave = new AutoSave(this.dataManager);
+                    this.autoSave.isEnabled = false;
+
+                    // データ読み込み
+                    try {
+                        await this.dataManager.loadData(this.config.dataUrl);
+                        console.log('Successfully loaded data');
+                    } catch (error) {
+                        console.error('Failed to load data:', error);
+                        // フォールバックデータを使用
+                        const fallbackData = {
+                            centerNode: {
+                                id: "root",
+                                title: "AI × DAOでつくる「関わりしろのあるまち」琴平町",
+                                type: "root",
+                                description: "データの読み込みに失敗しました。ページを再読み込みしてください。"
+                            },
+                            nodes: []
+                        };
+                        this.dataManager.importData(JSON.stringify(fallbackData));
+                    }
+
+                    if (!this.dataManager.data) {
+                        throw new Error('データが読み込まれませんでした');
+                    }
+
+                    this.initMindMap();
+                    this.initUIController();
+                    this.setupCustomEventListeners();
+                    this.handleUrlParams();
+                    this.hideInitialLoading();
+                    this.showWelcomeMessage();
+
+                    console.log('Application initialization completed successfully');
+
+                } catch (error) {
+                    console.error('Application initialization error:', error);
+                    this.showErrorMessage(`アプリケーションの初期化に失敗しました。\n\nエラー: ${error.message}`);
+                }
+            }
+
+            initMindMap() {
+                this.mindmap = new MindMap('mindmap-svg', this.dataManager);
+                this.mindmap.render(this.dataManager.data);
+            }
+
+            initUIController() {
+                this.uiController = new UIController(this.mindmap, this.dataManager);
+                this.urlPreview = new UrlPreview();
+                this.urlPreview.attachToUrlLinks();
+                this.contextMenu = new ContextMenu(this.dataManager, this.mindmap);
+                this.dataPersistence = new DataPersistence(this.dataManager);
+            }
+
+            setupDataListeners() {
+                this.dataManager.addListener((event, data) => {
+                    switch (event) {
+                        case 'nodeUpdated':
+                        case 'nodeAdded':
+                        case 'nodeRemoved':
+                            this.mindmap.render(this.dataManager.data);
+                            break;
+                    }
+                });
+            }
+
+            setupCustomEventListeners() {
+                document.addEventListener('showContextMenu', (event) => {
+                    const { node, x, y } = event.detail;
+                    this.contextMenu.show(x, y, node);
+                });
+
+                document.addEventListener('nodeRightClick', (event) => {
+                    const { node } = event.detail;
+                    this.uiController.showInfoPanel(node);
+                });
+
+                document.addEventListener('nodeHover', (event) => {
+                    const { node, x, y } = event.detail;
+                    this.uiController.showTooltip(x + 10, y - 10, node.title);
+                });
+
+                document.addEventListener('nodeLeave', () => {
+                    this.uiController.hideTooltip();
+                });
+
+                document.addEventListener('showMessage', (event) => {
+                    const { message, type } = event.detail;
+                    this.uiController.showMessage(message, type);
+                });
+
+                document.addEventListener('dataImported', () => {
+                    this.mindmap.render(this.dataManager.data);
+                });
+            }
+
+            handleUrlParams() {
+                const params = new URLSearchParams(window.location.search);
+                const nodeId = params.get('node');
+                if (nodeId) {
+                    setTimeout(() => {
+                        this.mindmap.focusNode(nodeId);
+                    }, 500);
+                }
+            }
+
+            showInitialLoading() {
+                const loading = document.createElement('div');
+                loading.id = 'initial-loading';
+                loading.className = 'loading';
+                loading.innerHTML = `
+                    <div class="spinner"></div>
+                    <p>マインドマップを読み込んでいます...</p>
+                `;
+                document.body.appendChild(loading);
+            }
+
+            hideInitialLoading() {
+                const loading = document.getElementById('initial-loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    setTimeout(() => loading.remove(), 300);
+                }
+            }
+
+            showWelcomeMessage() {
+                this.uiController.showMessage('あっきーの活動マインドマップへようこそ！', 'info');
+            }
+
+            showErrorMessage(message) {
+                if (this.uiController) {
+                    this.uiController.showMessage(message, 'error');
+                } else {
+                    alert(message);
+                }
+            }
+        }
+
+        // アプリケーション起動
+        document.addEventListener('DOMContentLoaded', () => {
+            const app = new App();
+            app.init();
+            window.app = app;
+        });
+    </script>
+</body>
+</html>

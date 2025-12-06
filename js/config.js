@@ -34,6 +34,13 @@ export const MINDMAP_CONFIGS = {
         title: '琴平DAO ペルソナ設計',
         dataUrl: 'data/dao-persona-design.json',
         storageKey: 'dao-persona-mindmap-autosave'
+    },
+
+    // あっきーの活動マインドマップ
+    'akki-activities': {
+        title: 'AI × DAOでつくる「関わりしろのあるまち」琴平町 - あっきーの活動マインドマップ',
+        dataUrl: 'data/akki-activities.json',
+        storageKey: 'akki-activities-mindmap-autosave'
     }
 };
 
