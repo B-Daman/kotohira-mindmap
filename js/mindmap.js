@@ -148,7 +148,7 @@ export class MindMap {
     prepareData(data) {
         // 階層構造の構築
         const hierarchy = this.buildHierarchy(data);
-        
+
         // ツリーレイアウトの作成
         const treeLayout = d3.tree()
             .nodeSize([this.config.siblingDistance, this.config.levelDistance])
@@ -157,17 +157,27 @@ export class MindMap {
                 const aHeight = this.config.nodeHeight[a.data.type] || 40;
                 const bHeight = this.config.nodeHeight[b.data.type] || 40;
                 // 縦方向の間隔を最小限に
-                const baseSpacing = Math.max(aHeight, bHeight) / 40;
+                let baseSpacing = Math.max(aHeight, bHeight) / 40;
+
+                // 折りたたまれたノードの場合、より狭い間隔にする
+                const aCollapsed = this.collapsedNodes.has(a.data.id) && !a.children;
+                const bCollapsed = this.collapsedNodes.has(b.data.id) && !b.children;
+
+                if (aCollapsed || bCollapsed) {
+                    // 折りたたまれたノードは間隔を30%に縮小
+                    baseSpacing *= 0.3;
+                }
+
                 return a.parent === b.parent ? baseSpacing : baseSpacing * 1.2;
             });
-        
+
         // レイアウト計算
         const root = d3.hierarchy(hierarchy);
         treeLayout(root);
-        
+
         // ノードデータ準備（座標を90度回転して左から右へ）
         this.nodes = [];
-        
+
         // 最小・最大のY座標を見つける
         let minY = Infinity;
         let maxY = -Infinity;
@@ -175,11 +185,11 @@ export class MindMap {
             minY = Math.min(minY, d.x);
             maxY = Math.max(maxY, d.x);
         });
-        
+
         // 全体の高さを計算し、中央に配置するためのオフセット
         const totalHeight = maxY - minY;
         const yOffset = (this.height - totalHeight) / 2 - minY;
-        
+
         root.descendants().forEach(d => {
             const node = {
                 ...d.data,
@@ -478,12 +488,26 @@ export class MindMap {
     // ノード展開
     expandNode(nodeId) {
         this.collapsedNodes.delete(nodeId);
-        this.updateVisibility();
+        this.updateLayout();
     }
 
     // ノード折りたたみ
     collapseNode(nodeId) {
         this.collapsedNodes.add(nodeId);
+        this.updateLayout();
+    }
+
+    // レイアウト更新（折りたたみ/展開時）
+    updateLayout() {
+        // データを再準備してレイアウトを再計算
+        const currentData = this.dataManager.getCurrentData();
+        this.prepareData(currentData);
+
+        // ノードとリンクを再描画
+        this.renderNodes();
+        this.renderLinks();
+
+        // 可視性を更新
         this.updateVisibility();
     }
 
