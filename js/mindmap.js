@@ -241,13 +241,27 @@ export class MindMap {
     
     // 階層構造の構築
     buildHierarchy(data) {
+        console.log('buildHierarchy input:', {
+            hasCenterNode: !!data.centerNode,
+            hasNodes: !!data.nodes,
+            nodesLength: data.nodes ? data.nodes.length : 0,
+            firstNodeHasChildren: data.nodes && data.nodes[0] ? data.nodes[0].children !== undefined : false
+        });
+
         // データが既にネストされた構造（children プロパティあり）の場合
         if (data.nodes && data.nodes.length > 0 && data.nodes[0].children !== undefined) {
             // 既にネストされた構造なので、centerNode に nodes を children として追加
-            return {
+            const hierarchy = {
                 ...data.centerNode,
                 children: data.nodes
             };
+            console.log('Returning nested hierarchy:', {
+                id: hierarchy.id,
+                title: hierarchy.title,
+                childrenCount: hierarchy.children.length,
+                firstChildId: hierarchy.children[0].id
+            });
+            return hierarchy;
         }
 
         // parentId ベースの構造の場合（後方互換性のため残す）
