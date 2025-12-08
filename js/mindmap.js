@@ -153,22 +153,26 @@ export class MindMap {
         const treeLayout = d3.tree()
             .nodeSize([this.config.siblingDistance, this.config.levelDistance])
             .separation((a, b) => {
+                // 同じ親を持つ兄弟ノード間の間隔のみを調整
+                if (a.parent !== b.parent) {
+                    return 1.5;
+                }
+
                 // ノードの高さに基づいて動的に間隔を調整
                 const aHeight = this.config.nodeHeight[a.data.type] || 40;
                 const bHeight = this.config.nodeHeight[b.data.type] || 40;
-                // 縦方向の間隔を最小限に
                 let baseSpacing = Math.max(aHeight, bHeight) / 40;
 
-                // 折りたたまれたノードの場合、より狭い間隔にする
-                const aCollapsed = this.collapsedNodes.has(a.data.id) && !a.children;
-                const bCollapsed = this.collapsedNodes.has(b.data.id) && !b.children;
+                // 折りたたまれたノード（子を持たない）の場合は間隔を最小化
+                const aHasNoVisibleChildren = !a.children || a.children.length === 0;
+                const bHasNoVisibleChildren = !b.children || b.children.length === 0;
 
-                if (aCollapsed || bCollapsed) {
-                    // 折りたたまれたノードは間隔を30%に縮小
-                    baseSpacing *= 0.3;
+                if (aHasNoVisibleChildren && bHasNoVisibleChildren) {
+                    // 両方とも子がない場合は最小間隔
+                    baseSpacing *= 0.5;
                 }
 
-                return a.parent === b.parent ? baseSpacing : baseSpacing * 1.2;
+                return baseSpacing;
             });
 
         // レイアウト計算
@@ -585,19 +589,26 @@ export class MindMap {
         const treeLayout = d3.tree()
             .nodeSize([this.config.siblingDistance, this.config.levelDistance])
             .separation((a, b) => {
+                // 同じ親を持つ兄弟ノード間の間隔のみを調整
+                if (a.parent !== b.parent) {
+                    return 1.5;
+                }
+
+                // ノードの高さに基づいて動的に間隔を調整
                 const aHeight = this.config.nodeHeight[a.data.type] || 40;
                 const bHeight = this.config.nodeHeight[b.data.type] || 40;
                 let baseSpacing = Math.max(aHeight, bHeight) / 40;
 
-                // 折りたたまれたノードの場合、より狭い間隔にする
-                const aCollapsed = this.collapsedNodes.has(a.data.id) && !a.children;
-                const bCollapsed = this.collapsedNodes.has(b.data.id) && !b.children;
+                // 折りたたまれたノード（子を持たない）の場合は間隔を最小化
+                const aHasNoVisibleChildren = !a.children || a.children.length === 0;
+                const bHasNoVisibleChildren = !b.children || b.children.length === 0;
 
-                if (aCollapsed || bCollapsed) {
-                    baseSpacing *= 0.3;
+                if (aHasNoVisibleChildren && bHasNoVisibleChildren) {
+                    // 両方とも子がない場合は最小間隔
+                    baseSpacing *= 0.5;
                 }
 
-                return a.parent === b.parent ? baseSpacing : baseSpacing * 1.2;
+                return baseSpacing;
             });
 
         // レイアウト計算
