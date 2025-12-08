@@ -175,6 +175,9 @@ export class MindMap {
         const root = d3.hierarchy(hierarchy);
         treeLayout(root);
 
+        // 階層ノードを保存
+        this.root = root;
+
         // ノードデータ準備（座標を90度回転して左から右へ）
         this.nodes = [];
 
@@ -191,10 +194,14 @@ export class MindMap {
         const yOffset = (this.height - totalHeight) / 2 - minY;
 
         root.descendants().forEach(d => {
+            // 座標を設定
+            d.x_transformed = d.y + 100;  // yとxを入れ替えて左から右へ
+            d.y_transformed = d.x + yOffset;  // 画面中央に配置
+
             const node = {
                 ...d.data,
-                x: d.y + 100,  // yとxを入れ替えて左から右へ
-                y: d.x + yOffset,  // 画面中央に配置
+                x: d.x_transformed,
+                y: d.y_transformed,
                 depth: d.depth
             };
             this.nodes.push(node);
@@ -275,15 +282,18 @@ export class MindMap {
         if (!this.linkGroup) {
             this.linkGroup = this.g.append('g').attr('class', 'links');
         }
-        
+
+        // 階層から直接リンクを生成
+        const links = this.root.links();
+
         // データバインディング
         const link = this.linkGroup.selectAll('.link')
-            .data(this.links, d => `${d.source}-${d.target}`);
+            .data(links, d => `${d.source.data.id}-${d.target.data.id}`);
         
         // Enter
         const linkEnter = link.enter()
             .append('path')
-            .attr('class', d => `link link-${d.type}`)
+            .attr('class', d => `link link-${d.target.data.type}`)
             .attr('marker-end', 'url(#arrowhead)');
         
         // Update + Enter
@@ -299,32 +309,32 @@ export class MindMap {
         if (!this.nodeGroup) {
             this.nodeGroup = this.g.append('g').attr('class', 'nodes');
         }
-        
-        // データバインディング
+
+        // データバインディング（階層データを使用）
         const node = this.nodeGroup.selectAll('.node')
-            .data(this.nodes, d => d.id);
+            .data(this.root.descendants(), d => d.data.id);
         
         // Enter
         const nodeEnter = node.enter()
             .append('g')
             .attr('class', d => {
                 // typeが存在しない場合のフォールバック
-                if (!d.type) {
+                if (!d.data.type) {
                     console.error('Node missing type:', d);
                     return 'node unknown';
                 }
                 // アンダースコアをハイフンに変換
-                const typeClass = d.type.replace(/_/g, '-');
-                return `node ${typeClass} ${this.collapsedNodes.has(d.id) ? 'collapsed' : ''}`;
+                const typeClass = d.data.type.replace(/_/g, '-');
+                return `node ${typeClass} ${this.collapsedNodes.has(d.data.id) ? 'collapsed' : ''}`;
             });
         
         // 矩形追加
         nodeEnter.append('rect')
-            .attr('width', d => this.config.nodeWidth[d.type || 'default'] || 160)
-            .attr('height', d => this.config.nodeHeight[d.type || 'default'] || 40)
-            .attr('x', d => -(this.config.nodeWidth[d.type || 'default'] || 160) / 2)
-            .attr('y', d => -(this.config.nodeHeight[d.type || 'default'] || 40) / 2)
-            .attr('data-node-id', d => d.id);
+            .attr('width', d => this.config.nodeWidth[d.data.type || 'default'] || 160)
+            .attr('height', d => this.config.nodeHeight[d.data.type || 'default'] || 40)
+            .attr('x', d => -(this.config.nodeWidth[d.data.type || 'default'] || 160) / 2)
+            .attr('y', d => -(this.config.nodeHeight[d.data.type || 'default'] || 40) / 2)
+            .attr('data-node-id', d => d.data.id);
         
         // テキスト追加（複数行対応）
         const self = this;
@@ -332,33 +342,33 @@ export class MindMap {
             const group = d3.select(this);
             
             // 担当者アイコンを追加（対策系ノードのみ）
-            if (d.assignee === '自分' && d.status && ['solution', 'current_effort', 'future_effort', 'success'].includes(d.type)) {
+            if (d.data.assignee === '自分' && d.data.status && ['solution', 'current_effort', 'future_effort', 'success'].includes(d.data.type)) {
                 const iconGroup = group.append('g')
                     .attr('class', 'assignee-icon')
-                    .attr('transform', `translate(${(self.config.nodeWidth[d.type] || 160) / 2 - 10}, ${-(self.config.nodeHeight[d.type] || 40) / 2 - 10})`);
-                
+                    .attr('transform', `translate(${(self.config.nodeWidth[d.data.type] || 160) / 2 - 10}, ${-(self.config.nodeHeight[d.data.type] || 40) / 2 - 10})`);
+
                 // 背景円
                 iconGroup.append('circle')
                     .attr('r', 10)
-                    .attr('fill', d.status === 'active' ? '#FFD700' : 
-                                 d.status === 'planned' ? '#87CEEB' : '#90EE90');
-                
+                    .attr('fill', d.data.status === 'active' ? '#FFD700' :
+                                 d.data.status === 'planned' ? '#87CEEB' : '#90EE90');
+
                 // アイコンテキスト
                 iconGroup.append('text')
                     .attr('text-anchor', 'middle')
                     .attr('dominant-baseline', 'central')
                     .attr('font-size', '12px')
-                    .text(d.status === 'active' ? '🌟' : 
-                          d.status === 'planned' ? '📅' : '✅');
+                    .text(d.data.status === 'active' ? '🌟' :
+                          d.data.status === 'planned' ? '📅' : '✅');
             }
             
             const text = group.append('text')
                 .attr('dy', '0em');
-            
-            const title = d.title;
+
+            const title = d.data.title;
             const lineHeight = 1.2;
-            const maxWidth = (self.config.nodeWidth[d.type] || 160) - 20;
-            const fontSize = d.type === 'root' ? 16 : d.type === 'major_issue' ? 15 : 14;
+            const maxWidth = (self.config.nodeWidth[d.data.type] || 160) - 20;
+            const fontSize = d.data.type === 'root' ? 16 : d.data.type === 'major_issue' ? 15 : 14;
             const charWidth = fontSize * 0.8; // 日本語文字の概算幅
             const maxCharsPerLine = Math.floor(maxWidth / charWidth);
             
@@ -401,18 +411,19 @@ export class MindMap {
         this.nodeSelection
             .attr('class', d => {
                 // アンダースコアをハイフンに変換
-                const typeClass = d.type.replace(/_/g, '-');
+                const typeClass = d.data.type.replace(/_/g, '-');
                 const classes = [`node`, typeClass];
-                if (this.collapsedNodes.has(d.id)) classes.push('collapsed');
-                if (this.highlightedNodes.has(d.id)) classes.push('highlighted');
-                
+                if (this.collapsedNodes.has(d.data.id)) classes.push('collapsed');
+                if (this.highlightedNodes.has(d.data.id)) classes.push('highlighted');
+
                 // 担当者クラスを追加（対策系ノードのみ）
-                if (d.assignee === '自分' && d.status && ['solution', 'current_effort', 'future_effort', 'success'].includes(d.type)) {
-                    classes.push(`my-${d.status}`);
+                if (d.data.assignee === '自分' && d.data.status && ['solution', 'current_effort', 'future_effort', 'success'].includes(d.data.type)) {
+                    classes.push(`my-${d.data.status}`);
                 }
-                
+
                 return classes.join(' ');
-            });
+            })
+            .attr('transform', d => `translate(${d.x_transformed},${d.y_transformed})`);
         
         // Exit
         node.exit()
@@ -439,32 +450,32 @@ export class MindMap {
             this.linkSelection.attr('d', d => {
                 const source = d.source;
                 const target = d.target;
-                
+
                 // 矩形の端から線を引く
-                const sourceX = source.x + (this.config.nodeWidth[source.type] || 160) / 2;
-                const targetX = target.x - (this.config.nodeWidth[target.type] || 160) / 2;
-                
+                const sourceX = source.x_transformed + (this.config.nodeWidth[source.data.type] || 160) / 2;
+                const targetX = target.x_transformed - (this.config.nodeWidth[target.data.type] || 160) / 2;
+
                 // ベジェ曲線で滑らかな接続
                 const midX = (sourceX + targetX) / 2;
-                return `M${sourceX},${source.y} C${midX},${source.y} ${midX},${target.y} ${targetX},${target.y}`;
+                return `M${sourceX},${source.y_transformed} C${midX},${source.y_transformed} ${midX},${target.y_transformed} ${targetX},${target.y_transformed}`;
             });
         }
-        
-        // ノード更新
-        if (this.nodeSelection) {
-            this.nodeSelection.attr('transform', d => `translate(${d.x},${d.y})`);
-        }
+
+        // ノード更新（既に transform で位置を設定しているので不要）
+        // if (this.nodeSelection) {
+        //     this.nodeSelection.attr('transform', d => `translate(${d.x_transformed},${d.y_transformed})`);
+        // }
     }
 
     // ノードクリック処理
     handleNodeClick(event, node) {
         event.stopPropagation();
-        
+
         if (node.children && node.children.length > 0) {
-            if (this.collapsedNodes.has(node.id)) {
-                this.expandNode(node.id);
+            if (this.collapsedNodes.has(node.data.id)) {
+                this.expandNode(node.data.id);
             } else {
-                this.collapseNode(node.id);
+                this.collapseNode(node.data.id);
             }
         }
     }
@@ -541,25 +552,25 @@ export class MindMap {
         
         // ノードの表示/非表示
         this.nodeSelection
-            .style('opacity', d => hiddenNodes.has(d.id) ? 0 : 1)
-            .style('pointer-events', d => hiddenNodes.has(d.id) ? 'none' : 'all');
-        
+            .style('opacity', d => hiddenNodes.has(d.data.id) ? 0 : 1)
+            .style('pointer-events', d => hiddenNodes.has(d.data.id) ? 'none' : 'all');
+
         // リンクの表示/非表示
         this.linkSelection
-            .style('opacity', d => 
-                hiddenNodes.has(d.source.id) || hiddenNodes.has(d.target.id) ? 0 : 0.6
+            .style('opacity', d =>
+                hiddenNodes.has(d.source.data.id) || hiddenNodes.has(d.target.data.id) ? 0 : 0.6
             );
-        
+
         // クラス更新
         this.nodeSelection
-            .classed('collapsed', d => this.collapsedNodes.has(d.id));
+            .classed('collapsed', d => this.collapsedNodes.has(d.data.id));
     }
 
     // ノードハイライト
     highlightNodes(nodeIds) {
         this.highlightedNodes = new Set(nodeIds);
         this.nodeSelection
-            .classed('highlighted', d => this.highlightedNodes.has(d.id));
+            .classed('highlighted', d => this.highlightedNodes.has(d.data.id));
     }
 
     // ハイライトクリア
