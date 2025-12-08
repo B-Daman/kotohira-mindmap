@@ -175,7 +175,18 @@ export class MindMap {
         console.log('Hierarchy data before d3.hierarchy:', hierarchy);
         const root = d3.hierarchy(hierarchy);
         console.log('Root after d3.hierarchy:', root);
-        console.log('Root descendants sample:', root.descendants().slice(0, 3));
+        const descendants = root.descendants();
+        console.log('Total descendants:', descendants.length);
+        console.log('Root descendants sample:', descendants.slice(0, 3));
+        descendants.slice(0, 5).forEach((d, i) => {
+            console.log(`Descendant ${i}:`, {
+                hasData: !!d.data,
+                dataKeys: d.data ? Object.keys(d.data) : 'NO DATA',
+                id: d.data?.id,
+                title: d.data?.title,
+                type: d.data?.type
+            });
+        });
         treeLayout(root);
 
         // 階層ノードを保存
@@ -416,6 +427,11 @@ export class MindMap {
         // クラス更新
         this.nodeSelection
             .attr('class', d => {
+                // typeが存在しない場合のフォールバック
+                if (!d.data || !d.data.type) {
+                    console.error('Node missing data or type in update:', d);
+                    return 'node unknown';
+                }
                 // アンダースコアをハイフンに変換
                 const typeClass = d.data.type.replace(/_/g, '-');
                 const classes = [`node`, typeClass];
