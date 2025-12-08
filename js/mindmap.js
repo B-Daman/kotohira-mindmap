@@ -338,7 +338,7 @@ export class MindMap {
             .attr('class', d => {
                 // typeが存在しない場合のフォールバック
                 if (!d.data.type) {
-                    console.error('Node missing type:', d);
+                    console.error('Node missing type:', d.data.id, 'Full node:', d.data);
                     return 'node unknown';
                 }
                 // アンダースコアをハイフンに変換
