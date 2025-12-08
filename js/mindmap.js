@@ -172,21 +172,7 @@ export class MindMap {
             });
 
         // レイアウト計算
-        console.log('Hierarchy data before d3.hierarchy:', hierarchy);
         const root = d3.hierarchy(hierarchy);
-        console.log('Root after d3.hierarchy:', root);
-        const descendants = root.descendants();
-        console.log('Total descendants:', descendants.length);
-        console.log('Root descendants sample:', descendants.slice(0, 3));
-        descendants.slice(0, 5).forEach((d, i) => {
-            console.log(`Descendant ${i}:`, {
-                hasData: !!d.data,
-                dataKeys: d.data ? Object.keys(d.data) : 'NO DATA',
-                id: d.data?.id,
-                title: d.data?.title,
-                type: d.data?.type
-            });
-        });
         treeLayout(root);
 
         // 階層ノードを保存
@@ -258,12 +244,10 @@ export class MindMap {
         // データが既にネストされた構造（children プロパティあり）の場合
         if (data.nodes && data.nodes.length > 0 && data.nodes[0].children !== undefined) {
             // 既にネストされた構造なので、centerNode に nodes を children として追加
-            const hierarchy = {
+            return {
                 ...data.centerNode,
                 children: data.nodes
             };
-            console.log('Building hierarchy from nested structure:', hierarchy);
-            return hierarchy;
         }
 
         // parentId ベースの構造の場合（後方互換性のため残す）
