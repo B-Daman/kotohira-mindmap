@@ -234,17 +234,27 @@ export class MindMap {
     
     // 階層構造の構築
     buildHierarchy(data) {
+        // データが既にネストされた構造（children プロパティあり）の場合
+        if (data.nodes && data.nodes.length > 0 && data.nodes[0].children) {
+            // 既にネストされた構造なので、centerNode に nodes を children として追加
+            return {
+                ...data.centerNode,
+                children: data.nodes
+            };
+        }
+
+        // parentId ベースの構造の場合（後方互換性のため残す）
         const nodeMap = new Map();
-        
+
         // センターノードを追加
         const root = { ...data.centerNode, children: [] };
         nodeMap.set(root.id, root);
-        
+
         // すべてのノードをマップに追加
         data.nodes.forEach(node => {
             nodeMap.set(node.id, { ...node, children: [] });
         });
-        
+
         // 親子関係を構築
         data.nodes.forEach(node => {
             if (node.parentId && nodeMap.has(node.parentId)) {
@@ -255,7 +265,7 @@ export class MindMap {
                 }
             }
         });
-        
+
         return root;
     }
 
