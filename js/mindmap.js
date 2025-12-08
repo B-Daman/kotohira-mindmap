@@ -172,7 +172,10 @@ export class MindMap {
             });
 
         // レイアウト計算
+        console.log('Hierarchy data before d3.hierarchy:', hierarchy);
         const root = d3.hierarchy(hierarchy);
+        console.log('Root after d3.hierarchy:', root);
+        console.log('Root descendants sample:', root.descendants().slice(0, 3));
         treeLayout(root);
 
         // 階層ノードを保存
@@ -242,12 +245,14 @@ export class MindMap {
     // 階層構造の構築
     buildHierarchy(data) {
         // データが既にネストされた構造（children プロパティあり）の場合
-        if (data.nodes && data.nodes.length > 0 && data.nodes[0].children) {
+        if (data.nodes && data.nodes.length > 0 && data.nodes[0].children !== undefined) {
             // 既にネストされた構造なので、centerNode に nodes を children として追加
-            return {
+            const hierarchy = {
                 ...data.centerNode,
                 children: data.nodes
             };
+            console.log('Building hierarchy from nested structure:', hierarchy);
+            return hierarchy;
         }
 
         // parentId ベースの構造の場合（後方互換性のため残す）
@@ -365,16 +370,17 @@ export class MindMap {
             const text = group.append('text')
                 .attr('dy', '0em');
 
-            const title = d.data.title;
+            const title = d.data.title || 'Untitled';
+            const nodeType = d.data.type || 'default';
             const lineHeight = 1.2;
-            const maxWidth = (self.config.nodeWidth[d.data.type] || 160) - 20;
-            const fontSize = d.data.type === 'root' ? 16 : d.data.type === 'major_issue' ? 15 : 14;
+            const maxWidth = (self.config.nodeWidth[nodeType] || 160) - 20;
+            const fontSize = nodeType === 'root' ? 16 : nodeType === 'major_issue' ? 15 : 14;
             const charWidth = fontSize * 0.8; // 日本語文字の概算幅
             const maxCharsPerLine = Math.floor(maxWidth / charWidth);
-            
+
             // テキストを適切な位置で分割
             const lines = [];
-            if (title.length <= maxCharsPerLine) {
+            if (title && title.length <= maxCharsPerLine) {
                 lines.push(title);
             } else {
                 // 最初の行
