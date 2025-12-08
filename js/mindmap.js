@@ -263,7 +263,10 @@ export class MindMap {
                 id: hierarchy.id,
                 title: hierarchy.title,
                 childrenCount: hierarchy.children.length,
-                firstChildId: hierarchy.children[0].id
+                firstChildId: hierarchy.children[0].id,
+                firstChildHasType: !!hierarchy.children[0].type,
+                firstChildType: hierarchy.children[0].type,
+                fullFirstChild: hierarchy.children[0]
             });
             return hierarchy;
         }
