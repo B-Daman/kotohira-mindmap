@@ -477,7 +477,11 @@ export class MindMap {
     handleNodeClick(event, node) {
         event.stopPropagation();
 
-        if (node.children && node.children.length > 0) {
+        // 子ノードがあるか、折りたたまれた子ノードがあるかチェック
+        const hasChildren = (node.children && node.children.length > 0) ||
+                           (node._children && node._children.length > 0);
+
+        if (hasChildren) {
             if (this.collapsedNodes.has(node.data.id)) {
                 this.expandNode(node.data.id);
             } else {
@@ -515,27 +519,98 @@ export class MindMap {
     // ノード展開
     expandNode(nodeId) {
         this.collapsedNodes.delete(nodeId);
+
+        // 階層ノードを見つけて展開
+        const node = this.findHierarchyNode(this.root, nodeId);
+        if (node && node._children) {
+            node.children = node._children;
+            node._children = null;
+        }
+
         this.updateLayout();
     }
 
     // ノード折りたたみ
     collapseNode(nodeId) {
         this.collapsedNodes.add(nodeId);
+
+        // 階層ノードを見つけて折りたたみ
+        const node = this.findHierarchyNode(this.root, nodeId);
+        if (node && node.children) {
+            node._children = node.children;
+            node.children = null;
+        }
+
         this.updateLayout();
+    }
+
+    // 階層ノードを検索
+    findHierarchyNode(root, nodeId) {
+        if (root.data.id === nodeId) return root;
+
+        if (root.children) {
+            for (const child of root.children) {
+                const found = this.findHierarchyNode(child, nodeId);
+                if (found) return found;
+            }
+        }
+
+        if (root._children) {
+            for (const child of root._children) {
+                const found = this.findHierarchyNode(child, nodeId);
+                if (found) return found;
+            }
+        }
+
+        return null;
     }
 
     // レイアウト更新（折りたたみ/展開時）
     updateLayout() {
-        // データを再準備してレイアウトを再計算
-        const currentData = this.dataManager.getCurrentData();
-        this.prepareData(currentData);
+        // ツリーレイアウトを再計算
+        const treeLayout = d3.tree()
+            .nodeSize([this.config.siblingDistance, this.config.levelDistance])
+            .separation((a, b) => {
+                const aHeight = this.config.nodeHeight[a.data.type] || 40;
+                const bHeight = this.config.nodeHeight[b.data.type] || 40;
+                let baseSpacing = Math.max(aHeight, bHeight) / 40;
+
+                // 折りたたまれたノードの場合、より狭い間隔にする
+                const aCollapsed = this.collapsedNodes.has(a.data.id) && !a.children;
+                const bCollapsed = this.collapsedNodes.has(b.data.id) && !b.children;
+
+                if (aCollapsed || bCollapsed) {
+                    baseSpacing *= 0.3;
+                }
+
+                return a.parent === b.parent ? baseSpacing : baseSpacing * 1.2;
+            });
+
+        // レイアウト計算
+        treeLayout(this.root);
+
+        // 座標を更新
+        let minY = Infinity;
+        let maxY = -Infinity;
+        this.root.descendants().forEach(d => {
+            minY = Math.min(minY, d.x);
+            maxY = Math.max(maxY, d.x);
+        });
+
+        const totalHeight = maxY - minY;
+        const yOffset = (this.height - totalHeight) / 2 - minY;
+
+        this.root.descendants().forEach(d => {
+            d.x_transformed = d.y + 100;
+            d.y_transformed = d.x + yOffset;
+        });
 
         // ノードとリンクを再描画
         this.renderNodes();
         this.renderLinks();
 
-        // 可視性を更新
-        this.updateVisibility();
+        // シミュレーションを更新
+        this.updateSimulation();
     }
 
     // 可視性更新
