@@ -245,30 +245,12 @@ export class MindMap {
     
     // 階層構造の構築
     buildHierarchy(data) {
-        console.log('buildHierarchy input:', {
-            hasCenterNode: !!data.centerNode,
-            hasNodes: !!data.nodes,
-            nodesLength: data.nodes ? data.nodes.length : 0,
-            firstNodeHasChildren: data.nodes && data.nodes[0] ? data.nodes[0].children !== undefined : false
-        });
-
         // データが既にネストされた構造（children プロパティあり）の場合
         if (data.nodes && data.nodes.length > 0 && data.nodes[0].children !== undefined) {
-            // 既にネストされた構造なので、centerNode に nodes を children として追加
-            const hierarchy = {
+            return {
                 ...data.centerNode,
                 children: data.nodes
             };
-            console.log('Returning nested hierarchy:', {
-                id: hierarchy.id,
-                title: hierarchy.title,
-                childrenCount: hierarchy.children.length,
-                firstChildId: hierarchy.children[0].id,
-                firstChildHasType: !!hierarchy.children[0].type,
-                firstChildType: hierarchy.children[0].type,
-                fullFirstChild: hierarchy.children[0]
-            });
-            return hierarchy;
         }
 
         // parentId ベースの構造の場合（後方互換性のため残す）
@@ -339,13 +321,8 @@ export class MindMap {
         const nodeEnter = node.enter()
             .append('g')
             .attr('class', d => {
-                // typeが存在しない場合のフォールバック
-                if (!d.data.type) {
-                    console.error('Node missing type:', d.data.id, 'Full node:', d.data);
-                    return 'node unknown';
-                }
                 // アンダースコアをハイフンに変換
-                const typeClass = d.data.type.replace(/_/g, '-');
+                const typeClass = (d.data.type || 'unknown').replace(/_/g, '-');
                 return `node ${typeClass} ${this.collapsedNodes.has(d.data.id) ? 'collapsed' : ''}`;
             });
         

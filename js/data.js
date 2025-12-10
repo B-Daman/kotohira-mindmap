@@ -40,12 +40,28 @@ export class DataManager {
             links: []
         };
 
-        // nodesが配列として存在する場合はフラット化
+        // nodesが配列として存在する場合
         if (rawData.nodes && Array.isArray(rawData.nodes)) {
-            processed.nodes = this.flattenNodes(rawData.nodes);
+            // ネスト構造（children がオブジェクト配列）の場合はそのまま返す
+            const isNestedStructure = rawData.nodes.length > 0 &&
+                                     rawData.nodes[0].children !== undefined &&
+                                     Array.isArray(rawData.nodes[0].children) &&
+                                     rawData.nodes[0].children.length > 0 &&
+                                     typeof rawData.nodes[0].children[0] === 'object' &&
+                                     rawData.nodes[0].children[0] !== null &&
+                                     rawData.nodes[0].children[0].id !== undefined;
+
+            if (isNestedStructure) {
+                // ネスト構造の場合はフラット化せずにそのまま返す
+                processed.nodes = rawData.nodes;
+                return processed;
+            } else {
+                // フラット構造の場合はフラット化処理を実行
+                processed.nodes = this.flattenNodes(rawData.nodes);
+            }
         }
 
-        // リンクの生成
+        // リンクの生成（フラット構造の場合のみ）
         processed.nodes.forEach(node => {
             if (node.parentId) {
                 processed.links.push({
