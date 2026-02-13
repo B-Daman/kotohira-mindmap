@@ -86,18 +86,34 @@ export class DataPersistence {
     }
 
     reconstructHierarchy() {
-        // フラットなノード構造から階層構造を再構築
-        const nodeMap = new Map();
-        const rootChildren = [];
-
         // データの整合性チェック
         if (!this.dataManager.data || !this.dataManager.data.nodes) {
             console.error('No nodes data available for hierarchy reconstruction');
             return [];
         }
 
+        const nodes = this.dataManager.data.nodes;
+
+        // ネスト構造（children がオブジェクト配列）かどうかを判定
+        const isNestedStructure = nodes.length > 0 &&
+            nodes[0].children !== undefined &&
+            Array.isArray(nodes[0].children) &&
+            nodes[0].children.length > 0 &&
+            typeof nodes[0].children[0] === 'object' &&
+            nodes[0].children[0] !== null &&
+            nodes[0].children[0].id !== undefined;
+
+        if (isNestedStructure) {
+            // 既にネスト構造の場合はそのまま返す
+            return nodes;
+        }
+
+        // フラット構造の場合は親子関係を再構築
+        const nodeMap = new Map();
+        const rootChildren = [];
+
         // すべてのノードをマップに追加
-        this.dataManager.data.nodes.forEach(node => {
+        nodes.forEach(node => {
             nodeMap.set(node.id, {
                 ...node,
                 children: []
@@ -105,7 +121,7 @@ export class DataPersistence {
         });
 
         // 親子関係を再構築
-        this.dataManager.data.nodes.forEach(node => {
+        nodes.forEach(node => {
             if (node.parentId === 'root') {
                 const nodeData = nodeMap.get(node.id);
                 if (nodeData) {
