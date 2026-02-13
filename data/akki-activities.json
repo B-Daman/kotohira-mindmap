@@ -90,21 +90,21 @@
               "id": "cat1-2-1",
               "title": "1-2-1. 定期AI勉強会（無料セミナー）",
               "type": "current_effort",
-              "description": "火曜：琴平町総合センター（13:00〜）、木曜：コトリ コワーキング＆ホステル琴平（18:00〜）。対象：事業者・住民・近隣自治体の議員・学生など。AIの基礎・安全な使い方、SNS発信、資料作成、文章要約などの実務活用。累計240名以上参加、満足度4.55/5。",
+              "description": "火曜：琴平町総合センター（13:00〜）、木曜：コトリ コワーキング＆ホステル琴平（18:00〜）。対象：事業者・住民・近隣自治体の議員・学生など。AIの基礎・安全な使い方、SNS発信、資料作成、文章要約などの実務活用。累計約270名以上参加、満足度4.55/5。1月にチラシ配布・回覧板・公式LINE告知を実施し火曜セミナーも毎週5～6名が参加するように定着。Discordステージチャンネルでのオンライン参加にも対応。",
               "children": [
                 {
                   "id": "cat1-2-1-action1",
                   "title": "毎週火曜・木曜のセミナー開催",
                   "type": "current_effort",
-                  "description": "継続的にセミナーを開催中",
+                  "description": "継続的にセミナーを開催中。2月のテーマ：AI超入門、SNS文章生成、AI画像生成、ホームページ作成",
                   "children": [],
                   "parentId": "cat1-2-1"
                 },
                 {
                   "id": "cat1-2-1-action2",
-                  "title": "AIセミナーのチラシ配り",
-                  "type": "future_effort",
-                  "description": "まずはAIセミナーの存在を知ってもらう\n・教育委員会\n・回覧板\nなど",
+                  "title": "AIセミナーのチラシ配布・告知",
+                  "type": "success",
+                  "description": "【完了】ポスター作成完了、回覧板で配布実施済み。公式LINE・広報ことひらでの告知も実施。結果として火曜セミナーの参加者が定着。",
                   "children": [],
                   "parentId": "cat1-2-1"
                 }
@@ -209,7 +209,7 @@
               "id": "cat2-1-1",
               "title": "2-1-1. Discordコミュニティ運営",
               "type": "success",
-              "description": "2025年9月末オープン。参加者：189名（2025-12-05時点）。週間イベント案内の配信。プロジェクト別チャンネル（竹あかり、讃岐おでん等）の運営。",
+              "description": "2025年9月末オープン。参加者200名超（2026年2月時点）。週間イベント案内の配信。プロジェクト別チャンネル（竹あかり、讃岐おでん等）の運営。定例MTGはテーマ事前設定・ゲスト回の導入で運営品質向上。",
               "children": [
                 {
                   "id": "cat2-1-1-action1",
@@ -222,11 +222,18 @@
                 {
                   "id": "cat2-1-1-action2",
                   "title": "新規メンバー獲得施策の実施",
-                  "type": "future_effort",
-                  "description": "200名突破を目指して継続的に告知・勧誘。音声配信。",
+                  "type": "current_effort",
+                  "description": "AIセミナー参加者への案内、YouTubeチャンネルからの流入、イベント告知等で増加中。定例MTG参加者への100ポイント付与も検討中。",
                   "children": [],
-                  "parentId": "cat2-1-1",
-                  "status": "planned"
+                  "parentId": "cat2-1-1"
+                },
+                {
+                  "id": "cat2-1-1-action3",
+                  "title": "定例MTG運営改善",
+                  "type": "success",
+                  "description": "【完了】テーマ事前設定・ゲスト回導入を決定し実施。machiDAO hiroさんとの対談回など、外部ゲスト招待も実現。",
+                  "children": [],
+                  "parentId": "cat2-1-1"
                 }
               ],
               "parentId": "cat2-1"
@@ -333,13 +340,13 @@
             },
             {
               "title": "2-1-6. LINEオープンチャットの作成",
-              "type": "major_issue",
-              "description": "関係人口創出のための、気軽な入口を作成する",
+              "type": "current_effort",
+              "description": "関係人口創出のための、気軽な入口を作成する。琴平町DAO主催のLINEオープンチャット開設準備中。",
               "children": [
                 {
                   "title": "LINEオープンチャット作成",
-                  "type": "future_effort",
-                  "description": "",
+                  "type": "current_effort",
+                  "description": "琴平町DAO主催のLINEオープンチャット開設準備中",
                   "children": [],
                   "id": "node_1765094092420_q4svq5krg",
                   "parentId": "node_1765094047214_exxb4yv8m"
@@ -354,8 +361,40 @@
                 }
               ],
               "id": "node_1765094047214_exxb4yv8m",
-              "parentId": "cat2-1",
-              "status": "planned"
+              "parentId": "cat2-1"
+            },
+            {
+              "id": "cat2-1-7",
+              "title": "2-1-7. 琴平デジタル町民YouTubeチャンネル",
+              "type": "success",
+              "description": "2026年1月開始。番組名「琴平デジタル町民NOW」、コーナー名「ことひら縁録」。毎週月曜20時配信。VTuber参加者による自己紹介・琴平町紹介で関係人口を創出。トークンエコノミーと連携し、視聴・参加でポイント付与の仕組みも検討。",
+              "children": [
+                {
+                  "id": "cat2-1-7-action1",
+                  "title": "毎週月曜の番組配信",
+                  "type": "current_effort",
+                  "description": "毎週月曜20時にYouTube Live配信中。第1回はあっきーインタビュー、第2回以降はVTuberゲスト回など。",
+                  "children": [],
+                  "parentId": "cat2-1-7"
+                },
+                {
+                  "id": "cat2-1-7-action2",
+                  "title": "番組運営体制の構築",
+                  "type": "success",
+                  "description": "【完了】番組名「琴平デジタル町民NOW」・コーナー名「ことひら縁録」をDAOメンバー投票で決定。配信スケジュール・運営フローを確立。",
+                  "children": [],
+                  "parentId": "cat2-1-7"
+                },
+                {
+                  "id": "cat2-1-7-action3",
+                  "title": "関係人口創出の仕組み化",
+                  "type": "current_effort",
+                  "description": "VTuber参加者の琴平町訪問促進、視聴者からの琴平ファン獲得を目指す。アーカイブ動画で継続的にリーチ拡大。",
+                  "children": [],
+                  "parentId": "cat2-1-7"
+                }
+              ],
+              "parentId": "cat2-1"
             }
           ],
           "parentId": "cat2"
@@ -369,14 +408,14 @@
             {
               "id": "cat2-2-1",
               "title": "2-2-1. 琴平バス「琴平デジタル町民ポイント」設計サポート",
-              "type": "solution",
-              "description": "トークンエコノミー設計（貯め方・使い方の整理）。地方公共団体におけるポイント・トークンの法的整理（資金決済法・税制などの論点整理）。「ポイントで提供する商品」の提供者としても参加。",
+              "type": "current_effort",
+              "description": "トークンエコノミー設計（貯め方・使い方の整理）。利用範囲が拡大中：琴平バス空席利用、コトリ宿泊、ベーグル交換、AI実務プラン（2万ポイント予定）等。イベント主催者向けポイント申請フォームも整備中。琴平デジタル町民LINE友だち数2,258人（2025年12月時点）。",
               "children": [
                 {
                   "id": "cat2-2-1-action1",
                   "title": "トークンエコノミー設計の支援",
                   "type": "current_effort",
-                  "description": "貯め方・使い方の整理をサポート中",
+                  "description": "貯め方・使い方の整理をサポート中。利用先の拡充を継続。",
                   "children": [],
                   "parentId": "cat2-2-1"
                 },
@@ -390,9 +429,9 @@
                 },
                 {
                   "id": "cat2-2-1-action3",
-                  "title": "ポイント交換商品の提供準備",
-                  "type": "future_effort",
-                  "description": "自身もポイント交換先の提供者として参加準備",
+                  "title": "ポイント交換商品の提供・拡充",
+                  "type": "current_effort",
+                  "description": "自身もポイント交換先の提供者として参加。AI実務プラン（2万ポイント）を準備中。イベント主催者向けポイント申請フォームも整備中。",
                   "children": [],
                   "parentId": "cat2-2-1",
                   "urls": [
@@ -400,8 +439,7 @@
                       "label": "【琴平山博覧会 Online Talk】琴平デジタル町民ポイント貯め方＆使い方公開会議",
                       "url": "https://www.youtube.com/live/_5ZLt7LTfVc?si=b3FvCbGtP3D_P7iW"
                     }
-                  ],
-                  "status": "planned"
+                  ]
                 }
               ],
               "parentId": "cat2-2"
@@ -450,8 +488,8 @@
                 {
                   "id": "cat2-3-2-action2",
                   "title": "2025/12/20_ロカネット名古屋に出展",
-                  "type": "future_effort",
-                  "description": "",
+                  "type": "success",
+                  "description": "【完了】2025/12/20出展完了。髭くまさん・kirinさんのサポートで琴平町DAOブースを運営。複数メディア掲載（サードニュース、時事ドットコム、かがわ経済ニュース）。次回第3回ロカネットや東急不動産主催イベント（2026年5～6月）への出展も検討中。",
                   "children": [],
                   "parentId": "cat2-3-2",
                   "urls": [
@@ -460,8 +498,7 @@
                       "url": "https://jpdao.org/event/20251220/",
                       "description": "地方創生×DAOの団体が数多く集まるところ"
                     }
-                  ],
-                  "status": "planned"
+                  ]
                 }
               ],
               "parentId": "cat2-3",
@@ -522,7 +559,7 @@
           "id": "cat3-1",
           "title": "3-1. 竹あかりプロジェクト",
           "type": "subcategory",
-          "description": "竹あかり制作イベントの運営支援",
+          "description": "竹あかり制作イベントの運営支援。2025/12/24金陵の郷で特別展示点灯を実施、12/25撤収完了。来年も継続予定。",
           "children": [
             {
               "id": "cat3-1-1",
@@ -530,8 +567,7 @@
               "type": "success",
               "description": "DAO内に専用チャンネルを作成し、制作イベントの周知・参加者募集を実施。",
               "children": [],
-              "parentId": "cat3-1",
-              "status": "planned"
+              "parentId": "cat3-1"
             },
             {
               "id": "cat3-1-2",
@@ -539,8 +575,15 @@
               "type": "success",
               "description": "DAOメンバー・関係人口の現場参加につなげる役割。",
               "children": [],
-              "parentId": "cat3-1",
-              "status": "planned"
+              "parentId": "cat3-1"
+            },
+            {
+              "id": "cat3-1-3",
+              "title": "3-1-3. 金陵の郷特別展示",
+              "type": "success",
+              "description": "【完了】2025/12/24に金陵の郷で竹あかり特別展示点灯を実施。12/25に撤収完了。来年も継続予定。",
+              "children": [],
+              "parentId": "cat3-1"
             }
           ],
           "parentId": "cat3"
@@ -549,19 +592,27 @@
           "id": "cat3-2",
           "title": "3-2. 讃岐おでんプロジェクト",
           "type": "subcategory",
-          "description": "おでんイベントの運営支援とDAO化検討",
+          "description": "おでんイベントの運営支援とDAO化。2025/12/22プレオープン実施、店主制を導入し定期営業中。合同会社DAO設立準備が進行中。",
           "children": [
             {
               "id": "cat3-2-1",
-              "title": "3-2-1. イベント周知・集客",
-              "type": "solution",
-              "description": "毎月22日の讃岐おでんイベントの告知。DAO内・町内への参加呼びかけ。",
+              "title": "3-2-1. イベント周知・集客・運営",
+              "type": "success",
+              "description": "2025/12/22にプレオープン実施。店主制を導入し、各回の店主が運営を担当する形に移行。1月以降も定期営業を継続（1/30-2/1営業など）。Instagramアカウント開設（三好さん）、Googleフォームで注文システム整備。",
               "children": [
                 {
                   "id": "cat3-2-1-action1",
-                  "title": "毎月22日のイベント告知",
+                  "title": "定期営業の告知・運営サポート",
                   "type": "current_effort",
-                  "description": "定期開催イベントの告知を継続",
+                  "description": "店主制により各回の告知・集客を支援。DAO内・町内への参加呼びかけを継続。",
+                  "children": [],
+                  "parentId": "cat3-2-1"
+                },
+                {
+                  "id": "cat3-2-1-action2",
+                  "title": "テレビ取材対応",
+                  "type": "success",
+                  "description": "【完了】2026/1/31にテレビ取材撮影実施。2026/2/18放送予定。讃岐おでんプロジェクトの認知拡大に貢献。",
                   "children": [],
                   "parentId": "cat3-2-1"
                 }
@@ -570,23 +621,23 @@
             },
             {
               "id": "cat3-2-2",
-              "title": "3-2-2. DAO化に向けた設計・資料作成",
-              "type": "solution",
-              "description": "「讃岐おでんDAO化したい」という要望に対応。何をDAOメンバーに共有すべきか／どんな情報が必要かを整理した資料を作成。DAOとしてどう自律分散的な運営に近づけるかの検討。",
+              "title": "3-2-2. 讃岐おでんDAO合同会社設立",
+              "type": "current_effort",
+              "description": "「讃岐おでんDAO」として合同会社型DAOの設立準備が進行中。NFT出資者モデルを採用し、出資者がNFTを保有する形での運営を検討。讃岐おでんを通じたDAO型事業運営の先行事例を目指す。",
               "children": [
                 {
                   "id": "cat3-2-2-action1",
-                  "title": "DAO化資料の作成",
+                  "title": "合同会社設立準備",
                   "type": "current_effort",
-                  "description": "DAO化に必要な情報を整理した資料を作成中",
+                  "description": "法人設立に向けた書類準備・NFT出資モデルの設計を進行中。",
                   "children": [],
                   "parentId": "cat3-2-2"
                 },
                 {
                   "id": "cat3-2-2-action2",
-                  "title": "運営モデルの提案",
-                  "type": "future_effort",
-                  "description": "自律分散的な運営に向けた具体的な提案",
+                  "title": "運営モデルの具体化",
+                  "type": "current_effort",
+                  "description": "店主制による自律分散的な運営と、NFT保有者による意思決定の仕組みを構築中。",
                   "children": [],
                   "parentId": "cat3-2-2"
                 }
@@ -595,15 +646,15 @@
             },
             {
               "id": "cat3-2-3",
-              "title": "3-2-3. 将来的な店主・1日店長としての関与候補",
-              "type": "issue",
-              "description": "自身が店主・1日店長としてお店を開く可能性も視野に入れて準備。",
+              "title": "3-2-3. 店主制の運用",
+              "type": "success",
+              "description": "【完了】店主制を導入。各回の店主が仕入れ・調理・販売を担当する仕組みが定着。あっきーも将来的に店主として参加する可能性あり。",
               "children": [
                 {
                   "id": "cat3-2-3-action1",
-                  "title": "1日店長の実施検討",
-                  "type": "future_effort",
-                  "description": "実施時期・内容を検討",
+                  "title": "店主制の継続運用",
+                  "type": "current_effort",
+                  "description": "各店主の運営をサポートし、店主制の仕組みを改善・定着させる",
                   "children": [],
                   "parentId": "cat3-2-3"
                 }
@@ -668,38 +719,37 @@
         },
         {
           "id": "cat3-4",
-          "title": "3-4. 四国まちづくりオフサイドミーティング運営",
+          "title": "3-4. 四国まちづくりオフサイトミーティング運営",
           "type": "subcategory",
-          "description": "2026年1月24〜25日開催予定の四国まちづくりイベント",
+          "description": "【完了】2026年1月24日に琴平町公会堂で開催完了。全国から公務員・地域おこし協力隊が参加。ワークショップでは「こんぴらいふ」コンセプトが提案される等、活発な議論が行われた。",
           "children": [
             {
               "id": "cat3-4-1",
               "title": "3-4-1. 運営実務",
-              "type": "current_effort",
-              "description": "運営側として参画。タイムテーブル・会場調整・チラシ・議事録等の運営実務。",
+              "type": "success",
+              "description": "【完了】運営側として参画。タイムテーブル・会場調整・チラシ・議事録等の運営実務をすべて完了。",
               "children": [
                 {
                   "id": "cat3-4-1-action1",
                   "title": "タイムテーブル作成",
-                  "type": "current_effort",
-                  "description": "イベントのタイムテーブルを作成中",
+                  "type": "success",
+                  "description": "【完了】イベントのタイムテーブルを作成完了",
                   "children": [],
                   "parentId": "cat3-4-1"
                 },
                 {
                   "id": "cat3-4-1-action2",
                   "title": "議事録作成",
-                  "type": "current_effort",
-                  "description": "会議の議事録担当",
+                  "type": "success",
+                  "description": "【完了】会議の議事録を作成完了",
                   "children": [],
-                  "parentId": "cat3-4-1",
-                  "status": "planned"
+                  "parentId": "cat3-4-1"
                 },
                 {
                   "id": "cat3-4-1-action3",
                   "title": "チラシ作成・配布",
-                  "type": "current_effort",
-                  "description": "告知用チラシの作成と配布",
+                  "type": "success",
+                  "description": "【完了】告知用チラシの作成と配布を完了",
                   "children": [],
                   "parentId": "cat3-4-1"
                 }
@@ -708,19 +758,10 @@
             },
             {
               "id": "cat3-4-2",
-              "title": "3-4-2. 登壇・発表",
-              "type": "solution",
-              "description": "当日の登壇・発表も予定。",
-              "children": [
-                {
-                  "id": "cat3-4-2-action1",
-                  "title": "発表資料の準備",
-                  "type": "future_effort",
-                  "description": "登壇用のプレゼン資料を作成",
-                  "children": [],
-                  "parentId": "cat3-4-2"
-                }
-              ],
+              "title": "3-4-2. 参加・交流",
+              "type": "success",
+              "description": "【完了】イベントに参加し、全国の公務員・協力隊メンバーと名刺交換・交流。ワークショップにも積極的に参加し、琴平町の活性化について議論。",
+              "children": [],
               "parentId": "cat3-4"
             }
           ],
@@ -877,8 +918,39 @@
                   "description": "【琴平町】DAOマネージャー・あっきーさん、1年でAIセミナー参加者240名達成。",
                   "url": "https://prtimes.jp/main/html/rd/p/000000242.000091165.html",
                   "children": [],
-                  "parentId": "cat4-1-4",
-                  "status": "planned"
+                  "parentId": "cat4-1-4"
+                },
+                {
+                  "id": "cat4-1-4-10",
+                  "title": "ロカネット出展メディア掲載（2025年12月）",
+                  "type": "success",
+                  "description": "ロカネット名古屋出展に関連してサードニュース、時事ドットコム、かがわ経済ニュース等に掲載。",
+                  "children": [],
+                  "parentId": "cat4-1-4"
+                },
+                {
+                  "id": "cat4-1-4-11",
+                  "title": "日本経済新聞インタビュー（2025年12月26日）",
+                  "type": "success",
+                  "description": "日経新聞記者によるあっきーへの詳細インタビュー。琴平町DAOの取り組み、AIセミナー、トークンエコノミーなどについて取材。記事掲載予定。",
+                  "children": [],
+                  "parentId": "cat4-1-4"
+                },
+                {
+                  "id": "cat4-1-4-12",
+                  "title": "讃岐おでんテレビ取材（2026年1月31日撮影）",
+                  "type": "success",
+                  "description": "讃岐おでんプロジェクトのテレビ取材。2026/1/31撮影、2/18放送予定。",
+                  "children": [],
+                  "parentId": "cat4-1-4"
+                },
+                {
+                  "id": "cat4-1-4-13",
+                  "title": "あるやうむインタビュー（2026年2月4日）",
+                  "type": "success",
+                  "description": "あるやうむ・たーなーさんによるあっきーインタビュー。YouTube公開予定。サポーター変更（髭くまさん→とまたろうさん）や讃岐おでんDAO構想についても言及。",
+                  "children": [],
+                  "parentId": "cat4-1-4"
                 }
               ],
               "parentId": "cat4-1"
@@ -1115,13 +1187,13 @@
       "id": "stats",
       "title": "📊 実績サマリー",
       "type": "stats",
-      "description": "活動の数値実績",
+      "description": "活動の数値実績（2026年2月時点）",
       "children": [
         {
           "id": "stats-1",
           "title": "AIセミナー累計参加者",
           "type": "success",
-          "description": "240名以上（満足度4.55/5）",
+          "description": "約270名以上（満足度4.55/5）",
           "children": [],
           "parentId": "stats"
         },
@@ -1137,7 +1209,7 @@
           "id": "stats-3",
           "title": "DAO参加者数",
           "type": "success",
-          "description": "189名（2025-12-05時点）",
+          "description": "200名超（2026年2月時点、増加中）",
           "children": [],
           "parentId": "stats"
         },
@@ -1145,7 +1217,23 @@
           "id": "stats-4",
           "title": "メディア掲載",
           "type": "success",
-          "description": "読売新聞、四国新聞、月刊ガバナンス、自治かがわ等 多数",
+          "description": "読売新聞、四国新聞、月刊ガバナンス、自治かがわ、日本経済新聞、テレビ取材等 多数",
+          "children": [],
+          "parentId": "stats"
+        },
+        {
+          "id": "stats-5",
+          "title": "琴平デジタル町民LINE友だち数",
+          "type": "success",
+          "description": "2,258人（2025年12月時点）",
+          "children": [],
+          "parentId": "stats"
+        },
+        {
+          "id": "stats-6",
+          "title": "琴平デジタル町民YouTubeチャンネル",
+          "type": "success",
+          "description": "2026年1月開始、毎週月曜配信中",
           "children": [],
           "parentId": "stats"
         }
@@ -1195,6 +1283,30 @@
           "title": "「関わりしろ産業」の創出",
           "type": "issue",
           "description": "外部人材が自然に流入する仕組みづくり",
+          "children": [],
+          "parentId": "future"
+        },
+        {
+          "id": "future-6",
+          "title": "Commons AI（DAO向けAIツール）の活用",
+          "type": "issue",
+          "description": "DAO運営のためのAIツール「Commons AI」の導入・活用。議事録自動生成やコミュニティ分析など、DAO運営をAIで効率化する構想。",
+          "children": [],
+          "parentId": "future"
+        },
+        {
+          "id": "future-7",
+          "title": "琴平AIガイドプロジェクト",
+          "type": "issue",
+          "description": "こんぴらさん参道等にQRコードを設置し、読み取るとAIガイドが案内する仕組みの構想。観光体験の向上とデジタル技術の活用を融合。",
+          "children": [],
+          "parentId": "future"
+        },
+        {
+          "id": "future-8",
+          "title": "讃岐おでんDAO合同会社の本格始動",
+          "type": "issue",
+          "description": "NFT出資モデルによる合同会社型DAOの先行事例として確立。地域事業のDAO化モデルケースを目指す。",
           "children": [],
           "parentId": "future"
         }
