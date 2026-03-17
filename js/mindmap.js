@@ -493,17 +493,17 @@ export class MindMap {
         event.preventDefault();
         event.stopPropagation();
         
-        // コンテキストメニューを表示
-        const menuEvent = new CustomEvent('showContextMenu', { 
-            detail: { node, x: event.pageX, y: event.pageY }
+        // コンテキストメニューを表示（D3階層ノードから実データを取り出して渡す）
+        const menuEvent = new CustomEvent('showContextMenu', {
+            detail: { node: node.data || node, x: event.pageX, y: event.pageY }
         });
         document.dispatchEvent(menuEvent);
     }
 
     // ノードホバー処理
     handleNodeHover(event, node) {
-        const uiEvent = new CustomEvent('nodeHover', { 
-            detail: { node, x: event.pageX, y: event.pageY }
+        const uiEvent = new CustomEvent('nodeHover', {
+            detail: { node: node.data || node, x: event.pageX, y: event.pageY }
         });
         document.dispatchEvent(uiEvent);
     }
@@ -731,13 +731,14 @@ export class MindMap {
     }
 
     // ノードダブルクリック処理（編集モード）
-    handleNodeDoubleClick(event, node) {
+    handleNodeDoubleClick(event, d3Node) {
         event.stopPropagation();
         event.preventDefault();
-        
+
         const self = this;
         const currentTarget = event.currentTarget;
-        
+        const node = d3Node.data || d3Node;
+
         // 編集可能なtextareaを作成
         const nodeWidth = this.config.nodeWidth[node.type] || 160;
         const nodeHeight = this.config.nodeHeight[node.type] || 40;
