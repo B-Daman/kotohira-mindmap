@@ -1,0 +1,17 @@
+# Backup / temp data files
+*.backup
+*.backup-*
+*.before-update
+data/*-download.json
+data/*-new.json
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
