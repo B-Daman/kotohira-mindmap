@@ -379,7 +379,7 @@
           "id": "town_council",
           "title": "琴平町の町議会議員",
           "type": "issue",
-          "description": "月約20万円と低いため副業必須",
+          "description": "月額27万円（期末手当込み年約390〜450万円）。副業必須。当選時はAI個人事業と組み合わせ。落選時は地域力創造アドバイザー等に転換。",
           "children": [
             {
               "id": "council_consideration",
@@ -388,6 +388,59 @@
               "description": "町への恩返しと副業の両立",
               "children": [],
               "parentId": "town_council"
+            },
+            {
+              "id": "council_fallback",
+              "title": "落選時サブプラン",
+              "type": "solution",
+              "description": "議員でなければ琴平町との兼業制限なし。地域力創造アドバイザー+二地域居住コーディネーター+AI個人事業の三刀流に転換。詳細: career-exit-strategy/plan/2026-04-27_出口戦略プラン.md",
+              "children": [],
+              "parentId": "town_council"
+            }
+          ],
+          "parentId": "career_after"
+        },
+        {
+          "id": "regional_advisor",
+          "title": "地域力創造アドバイザー（総務省）",
+          "type": "issue",
+          "description": "総務省登録の外部専門家。自治体から委嘱を受けて指導・助言。特別交付税で年560万円上限（最大3年）。協力隊OBの登録事例あり。議員落選時の主要キャリアパス。",
+          "children": [
+            {
+              "id": "advisor_registration",
+              "title": "登録要件の充足確認",
+              "type": "solution",
+              "description": "琴平町DAO実績・メディア15件以上・他地域支援実績（つるぎ町・小豆島・宇多津町）で要件を満たせる可能性高い。都道府県または市区町村の推薦状が必要。",
+              "children": [
+                {
+                  "id": "advisor_inquiry",
+                  "title": "総務省地域力創造グループへの照会",
+                  "type": "future_effort",
+                  "description": "2026年6月末までに登録可否・手続きを確認",
+                  "status": "planned",
+                  "assignee": "自分",
+                  "parentId": "advisor_registration",
+                  "children": []
+                }
+              ],
+              "parentId": "regional_advisor"
+            }
+          ],
+          "parentId": "career_after"
+        },
+        {
+          "id": "nichiiki_coordinator",
+          "title": "二地域居住コーディネーター（国土交通省）",
+          "type": "issue",
+          "description": "改正広域的地域活性化法（2024年11月施行）に基づく。特別交付税措置あり（専任500万円上限）。ふるさと住民登録制度と直結。制度は2027〜2028年頃に成熟見込み。",
+          "children": [
+            {
+              "id": "nichiiki_watch",
+              "title": "制度の成熟を観察",
+              "type": "solution",
+              "description": "2027年の協力隊卒業時期と制度成熟のタイミングが合う。ふるさと住民登録制度の推進経験が直接活きる。",
+              "children": [],
+              "parentId": "nichiiki_coordinator"
             }
           ],
           "parentId": "career_after"
